@@ -25,20 +25,20 @@ proxies:
   servername: gateway.icloud.com
   client-fingerprint: chrome
 - name: 🇫🇮 芬兰 (Finland) 03 - xiaohe
-  server: 151.101.56.6
-  port: 443
+  server: 212.193.18.183
+  port: 8446
   udp: true
   type: vless
-  uuid: d7282b41-1f2a-47bb-8593-f464fd6b6d78
+  uuid: 246b101b-4e4a-451f-8e9c-5e8d3b64b4ef
   tls: true
-  servername: global.fastly.com
-  skip-cert-verify: true
+  reality-opts:
+    public-key: f6xhmL1XqUJ4zdkaDsh9GuEyXc0JXM2Dp5KwU8VHb0c
+    short-id: 7f8e9d0c1b2a
+  servername: maps.apple.com
   client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: kayko.global.ssl.fastly.net
+  network: grpc
+  grpc-opts:
+    grpc-service-name: snob-grpc
 proxy-groups:
 - name: PROXIES
   type: select
