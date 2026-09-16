@@ -22,17 +22,16 @@
     {
       "type": "vless",
       "tag": "🇦🇪 阿联酋 (UAE) 02 - xiaohe",
-      "server": "31.56.189.27",
+      "server": "srv-21bac9.vless.monster",
       "server_port": 2087,
       "uuid": "df9f5aca-eda0-428f-a752-e53866153d12",
       "tls": {
         "enabled": true,
         "server_name": "srv-21bac9.vless.monster",
         "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "firefox"
-        }
+        "alpn": [
+          "h2"
+        ]
       },
       "transport": {
         "type": "grpc",
@@ -48,7 +47,7 @@
       "tls": {
         "enabled": true,
         "server_name": "hopp-romania-new.roxa.org",
-        "insecure": false
+        "insecure": true
       }
     },
     {
