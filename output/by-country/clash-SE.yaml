@@ -15,7 +15,7 @@ proxies:
   reality-opts:
     public-key: wSjV1yR_rhDUdoNbM9zIXNGLASLp9RorComnyoayo2c
   servername: www.blocket.se
-  client-fingerprint: randomized
+  client-fingerprint: firefox
 - name: 🇸🇪 瑞典 (Sweden) 02 - xiaohe
   server: 193.42.39.10
   port: 33743
