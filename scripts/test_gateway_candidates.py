@@ -78,6 +78,31 @@ class GatewayCandidateTests(unittest.TestCase):
             payload = json.load(stream)
         self.assertEqual(payload["candidates"][0]["risk_score"], 100)
 
+    def test_feed_merges_duplicate_stable_ids_and_provenance(self):
+        outbound = {
+            "type": "trojan", "server": "198.51.100.20", "server_port": 443,
+            "password": "test-password",
+        }
+        common = {
+            "proto": "trojan", "country": "US", "exit_ip": "203.0.113.20",
+            "net_type": "datacenter", "asn": 64500, "isp": "Example ISP",
+            "confidence": 80, "fraud_score": 10, "mitm_risk": False,
+            "is_stalled": False, "outbound": outbound,
+        }
+        slower = dict(common, latency_ms=300, speed_bps=100000,
+                      upstream_sources=["https://source.example/a"])
+        faster = dict(common, latency_ms=100, speed_bps=200000,
+                      upstream_sources=["https://source.example/b"])
+
+        self.assertEqual(mv.export_gateway_candidates([slower, faster]), 1)
+        with open(mv.GATEWAY_CANDIDATES_PATH, encoding="utf-8") as stream:
+            candidates = json.load(stream)["candidates"]
+        self.assertEqual(len(candidates), 1)
+        self.assertEqual(candidates[0]["latency_ms"], 100)
+        self.assertEqual(candidates[0]["upstream_sources"], [
+            "https://source.example/a", "https://source.example/b"
+        ])
+
 
 if __name__ == "__main__":
     unittest.main()
