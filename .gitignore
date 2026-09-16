@@ -2,6 +2,7 @@ Country.mmdb
 ASN.mmdb
 __pycache__/
 *.pyc
+.venv/
 runtime/
 .test/
 .sb-probe/
