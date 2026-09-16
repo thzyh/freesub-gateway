@@ -78,6 +78,9 @@ class GatewayCandidateTests(unittest.TestCase):
             payload = json.load(stream)
         self.assertEqual(payload["candidates"][0]["risk_score"], 100)
 
+        invalid_country = dict(vless, country="OTHER")
+        self.assertEqual(mv.export_gateway_candidates([invalid_country]), 0)
+
     def test_feed_merges_duplicate_stable_ids_and_provenance(self):
         outbound = {
             "type": "trojan", "server": "198.51.100.20", "server_port": 443,

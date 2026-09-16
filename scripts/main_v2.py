@@ -2225,13 +2225,14 @@ def export_gateway_candidates(nodes):
     for item in nodes:
         protocol = str(item.get("proto") or "").lower()
         outbound = item.get("outbound")
-        if protocol not in GATEWAY_PROTOCOLS or not outbound:
+        country = str(item.get("country") or "").strip().upper()
+        if protocol not in GATEWAY_PROTOCOLS or not outbound or len(country) != 2 or not country.isalpha():
             continue
         candidate_id = gateway_candidate_id(item)
         candidate = {
             "candidate_id": candidate_id,
             "protocol": protocol,
-            "country": item.get("country") or "OTHER",
+            "country": country,
             "exit_ip": item.get("exit_ip"),
             "network_type": item.get("net_type") or "unknown",
             "asn": item.get("asn"),
