@@ -23,6 +23,7 @@
 import os
 import re
 import io
+import html as html_lib
 import sys
 import json
 import hashlib
@@ -81,6 +82,10 @@ WORKDIR = os.path.dirname(os.path.abspath(__file__))          # scripts/
 BASEDIR = os.path.dirname(WORKDIR)                              # repo root
 RUNTIME_DIR = os.path.join(BASEDIR, "runtime")                  # kernels & db
 SINGBOX_BIN = os.path.join(RUNTIME_DIR, "sing-box")
+GATEWAY_QUALITY_CACHE_PATH = os.path.join(BASEDIR, "config", "gateway-quality.json")
+GATEWAY_QUALITY_MAX_AGE_DAYS = 7
+GATEWAY_QUALITY_PROBE_LIMIT = 24
+GATEWAY_SCENES = ("tiktok", "cross_border_ecommerce", "social_media", "ai")
 
 # --- 测活阈值 (毫秒/秒) ---
 # ★ 分层超时: 首击宽 (12s 容慢节点), 重试窄 (4s 快速放弃死节点)
@@ -2195,7 +2200,6 @@ def make_node_name(item, idx, force_residential=False):
 
 
 GATEWAY_PROTOCOLS = {"vless", "vmess", "trojan", "shadowsocks"}
-GATEWAY_RISK_REJECT_THRESHOLD = 75
 
 
 def gateway_candidate_id(item):
@@ -2208,39 +2212,210 @@ def gateway_candidate_id(item):
     return "fs-" + digest[:24]
 
 
-def gateway_risk_score(item):
-    """Combine independent safety signals into a conservative 0..100 score.
+def _plain_text(fragment):
+    return re.sub(r"\s+", " ", html_lib.unescape(re.sub(r"<[^>]+>", " ", fragment))).strip()
 
-    Classification confidence deliberately does not participate here.  A 90%
-    confidence that an address is hosted in a datacenter must never be rendered
-    as a risk score of 10.
-    """
-    if item.get("mitm_risk") or item.get("is_stalled"):
-        return 100
 
-    fraud = item.get("fraud_score", -1)
-    score = 0
-    if isinstance(fraud, (int, float)) and fraud >= 0:
-        score = min(100, int(fraud))
+def parse_ping0_quality_html(document, expected_ip="", checked_at=None):
+    """Parse Ping0 evidence, failing closed on CAPTCHA or incomplete pages."""
+    if not document or "cf-turnstile" in document or "challenge-platform" in document:
+        return None
+    ip_match = re.search(r"window\.ip\s*=\s*['\"]([^'\"]+)['\"]", document)
+    if not ip_match:
+        ip_match = re.search(r"<title>\s*([^<\s]+)-", document, re.I)
+    observed_ip = (ip_match.group(1).strip() if ip_match else "")
+    if not observed_ip or (expected_ip and observed_ip != expected_ip):
+        return None
+    risk_match = re.search(
+        r'class=["\'][^"\']*riskitem\s+riskcurrent[^"\']*["\'][^>]*>.*?'
+        r'class=["\']value["\'][^>]*>\s*(\d+)\s*%', document, re.I | re.S,
+    )
+    native_match = re.search(
+        r'class=["\'][^"\']*line-nativeip[^"\']*["\'][^>]*>.*?'
+        r'class=["\'][^"\']*content[^"\']*["\'][^>]*>(.*?)</div>', document, re.I | re.S,
+    )
+    if not risk_match or not native_match:
+        return None
+    native_label = _plain_text(native_match.group(1))
+    scene_names = {
+        "tiktok": "TikTok",
+        "cross_border_ecommerce": "跨境电商",
+        "social_media": "社媒运营",
+        "ai": "AI 应用",
+    }
+    cards = re.findall(
+        r'class=["\'][^"\']*scene-card[^"\']*["\'][^>]*>(.*?)</div>\s*</div>',
+        document, re.I | re.S,
+    )
+    stars = {}
+    for card in cards:
+        text = _plain_text(card)
+        for key, label in scene_names.items():
+            if label.lower() in text.lower():
+                stars[key] = card.count("★")
+                break
+    if any(key not in stars for key in GATEWAY_SCENES):
+        return None
+    checked = checked_at or datetime.now(timezone.utc)
+    if checked.tzinfo is None:
+        checked = checked.replace(tzinfo=timezone.utc)
+    return {
+        "source": "ping0",
+        "risk_score": int(risk_match.group(1)),
+        "native_ip": native_label == "原生 IP",
+        "native_label": native_label,
+        "scenario_stars": stars,
+        "checked_at": checked.astimezone(timezone.utc).isoformat(),
+    }
 
-    # These are conservative floors for categorical signals, not invented
-    # third-party fraud scores.  Explicit proxy exits are unsuitable for the
-    # Gateway backup pool; hosting/datacenter addresses remain eligible unless
-    # another signal crosses the rejection threshold.
-    network_type = str(item.get("net_type") or "unknown").lower()
-    type_floor = {
-        "residential": 30,
-        "mobile": 30,
-        "datacenter": 50,
-        "cdn": 65,
-        "unknown": 70,
-    }.get(network_type, 70)
-    score = max(score, type_floor)
-    if item.get("ip_api_hosting"):
-        score = max(score, 50)
-    if item.get("ip_api_proxy"):
-        score = max(score, 90)
-    return score
+
+def gateway_quality_is_eligible(item, now=None):
+    quality = item.get("gateway_quality") if isinstance(item, dict) else None
+    if not isinstance(quality, dict):
+        return False
+    risk = quality.get("risk_score")
+    stars = quality.get("scenario_stars")
+    checked = _quality_checked_at(quality)
+    now = now or datetime.now(timezone.utc)
+    fresh = checked is not None and -3600 <= (now - checked).total_seconds() <= GATEWAY_QUALITY_MAX_AGE_DAYS * 86400
+    return (
+        quality.get("source") == "ping0"
+        and quality.get("native_ip") is True
+        and quality.get("native_label") == "原生 IP"
+        and isinstance(risk, int) and 0 <= risk <= 15
+        and isinstance(stars, dict)
+        and all(isinstance(stars.get(scene), int) and stars[scene] >= 4 for scene in GATEWAY_SCENES)
+        and fresh
+    )
+
+
+def _quality_checked_at(quality):
+    try:
+        parsed = datetime.fromisoformat(str(quality.get("checked_at") or "").replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone.utc)
+        return parsed.astimezone(timezone.utc)
+    except (TypeError, ValueError):
+        return None
+
+
+def load_gateway_quality_cache(path=GATEWAY_QUALITY_CACHE_PATH):
+    try:
+        with open(path, encoding="utf-8") as stream:
+            payload = json.load(stream)
+        if payload.get("schema_version") != 1 or not isinstance(payload.get("entries"), dict):
+            return {}
+        return payload["entries"]
+    except (OSError, ValueError, TypeError):
+        return {}
+
+
+def save_gateway_quality_cache(entries, path=GATEWAY_QUALITY_CACHE_PATH):
+    directory = os.path.dirname(path)
+    os.makedirs(directory, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix="gateway-quality.", suffix=".tmp", dir=directory)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as stream:
+            json.dump({"schema_version": 1, "entries": entries}, stream, indent=2, ensure_ascii=False)
+            stream.write("\n")
+        os.replace(temporary, path)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
+def probe_ping0_quality(item):
+    """Query Ping0 through the candidate itself; CAPTCHA/incomplete data is rejected."""
+    outbound = item.get("outbound")
+    expected_ip = str(item.get("exit_ip") or "").strip()
+    if not outbound or not expected_ip:
+        return None
+    socks_port = _alloc_socks_port()
+    task_id = uuid.uuid4().hex[:10]
+    cfg_path = os.path.join(RUNTIME_DIR, f"sb_quality_{task_id}.json")
+    process = None
+    try:
+        with open(cfg_path, "w", encoding="utf-8") as stream:
+            json.dump(build_test_config(outbound, socks_port), stream)
+        executable = SINGBOX_BIN + (".exe" if os.name == "nt" else "")
+        checked = subprocess.run(
+            [executable, "check", "-c", cfg_path], capture_output=True, text=True, timeout=15,
+            creationflags=(subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0),
+        )
+        if checked.returncode != 0:
+            return None
+        process = subprocess.Popen(
+            [executable, "run", "-c", cfg_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+            creationflags=(subprocess.CREATE_NO_WINDOW if os.name == "nt" else 0),
+        )
+        deadline = time.time() + 6
+        while time.time() < deadline:
+            if process.poll() is not None:
+                return None
+            try:
+                with socket.create_connection(("127.0.0.1", socks_port), timeout=0.4):
+                    break
+            except OSError:
+                time.sleep(0.15)
+        else:
+            return None
+        proxy = f"socks5h://127.0.0.1:{socks_port}"
+        response = requests.get(
+            "https://ping0.cc/", proxies={"http": proxy, "https": proxy},
+            headers={"User-Agent": USER_AGENT}, timeout=(5, 15), verify=True,
+        )
+        if response.status_code != 200:
+            return None
+        return parse_ping0_quality_html(response.text, expected_ip)
+    except Exception:
+        return None
+    finally:
+        if process and process.poll() is None:
+            process.kill()
+            try:
+                process.wait(timeout=3)
+            except Exception:
+                pass
+        try:
+            if os.path.exists(cfg_path):
+                os.remove(cfg_path)
+        except OSError:
+            pass
+
+
+def enrich_gateway_quality(nodes, now=None):
+    """Attach only fresh, verifiable Ping0 evidence to strict Gateway candidates."""
+    now = now or datetime.now(timezone.utc)
+    cache = load_gateway_quality_cache()
+    pending = []
+    for item in nodes:
+        fraud = item.get("fraud_score", -1)
+        basic_ok = (
+            item.get("net_type") in ("residential", "mobile")
+            and isinstance(fraud, (int, float)) and 0 <= fraud <= 15
+            and not item.get("ip_api_proxy") and not item.get("ip_api_hosting")
+            and item.get("exit_ip") and item.get("outbound")
+        )
+        if not basic_ok:
+            continue
+        quality = cache.get(item["exit_ip"])
+        checked = _quality_checked_at(quality) if isinstance(quality, dict) else None
+        if checked and (now - checked).total_seconds() <= GATEWAY_QUALITY_MAX_AGE_DAYS * 86400:
+            item["gateway_quality"] = quality
+            continue
+        if len(pending) < GATEWAY_QUALITY_PROBE_LIMIT:
+            pending.append(item)
+    if pending:
+        print(f"[*] Ping0 严格质量复检: {len(pending)} 个低风险家宽候选 ...")
+        with ThreadPoolExecutor(max_workers=min(4, len(pending))) as executor:
+            for item, quality in zip(pending, executor.map(probe_ping0_quality, pending)):
+                if quality:
+                    cache[item["exit_ip"]] = quality
+                    item["gateway_quality"] = quality
+        save_gateway_quality_cache(cache)
+    accepted = sum(1 for item in nodes if gateway_quality_is_eligible(item))
+    print(f"[+] Gateway 严格质量候选: {accepted} (原生 IP / Ping0≤15 / 全场景≥4星)")
+    return accepted
 
 
 def export_gateway_candidates(nodes):
@@ -2257,9 +2432,16 @@ def export_gateway_candidates(nodes):
         country = str(item.get("country") or "").strip().upper()
         if protocol not in GATEWAY_PROTOCOLS or not outbound or len(country) != 2 or not country.isalpha():
             continue
-        risk_score = gateway_risk_score(item)
-        if risk_score >= GATEWAY_RISK_REJECT_THRESHOLD:
+        fraud = item.get("fraud_score", -1)
+        if (
+            item.get("net_type") not in ("residential", "mobile")
+            or item.get("ip_api_proxy") or item.get("ip_api_hosting")
+            or not isinstance(fraud, (int, float)) or fraud < 0 or fraud > 15
+            or not gateway_quality_is_eligible(item)
+        ):
             continue
+        quality = item["gateway_quality"]
+        risk_score = quality["risk_score"]
         candidate_id = gateway_candidate_id(item)
         candidate = {
             "candidate_id": candidate_id,
@@ -2273,6 +2455,7 @@ def export_gateway_candidates(nodes):
             "latency_ms": int(item.get("latency_ms") or 0),
             "speed_bps": int(item.get("speed_bps") or 0),
             "risk_score": risk_score,
+            "quality": quality,
             "risk_signals": {
                 "fraud_score": item.get("fraud_score")
                 if isinstance(item.get("fraud_score"), (int, float)) and item.get("fraud_score") >= 0
@@ -2296,9 +2479,9 @@ def export_gateway_candidates(nodes):
     candidates = list(candidates_by_id.values())
     candidates.sort(key=lambda row: (row["country"], row["risk_score"], row["latency_ms"], row["candidate_id"]))
     payload = {
-        "schema_version": 1,
+        "schema_version": 2,
         "generated_at": datetime.now(timezone.utc).isoformat(),
-        "source_repository": os.environ.get("GITHUB_REPOSITORY", "hezhanleiok/freesub"),
+        "source_repository": os.environ.get("GITHUB_REPOSITORY", "thzyh/freesub-gateway"),
         "candidates": candidates,
     }
     os.makedirs(OUTPUT_DIR, exist_ok=True)
@@ -2473,7 +2656,7 @@ def update_readme(total_count, res_count):
 > ⚡ **真实可用保障**: 所有节点由 `sing-box v{SINGBOX_VERSION}` 内核建立实际代理隧道, 完成真实 HTTPS 双向传输握手 + 出口 IP 穿透验证 + Cloudflare 限速下载断流检测 + TLS 证书校验 (MITM 劫持识别), 拒绝虚假通畅、断流节点与高危劫持节点。
 > 🛡️ **全协议支持**: VLESS (Reality/Vision) · VMESS · Trojan · Shadowsocks · Hysteria2 · TUIC · AnyTLS
 
-> 🔌 **Aimili Gateway 备用连接候选**: [gateway-candidates.json](output/gateway-candidates.json)。该文件只包含已通过 Actions 测活、综合风险分低于 75 且未被 ip-api 标记为代理出口的 VLESS/VMess/Trojan/Shadowsocks 候选；nyVPS 接入前仍必须进行本机复检，且保留每个节点的上游来源。`risk_score` 是综合筛选分，`risk_signals.fraud_score` 才是实际取得的 Scamalytics 分数；无法取得时为 `null`，不会再用网络分类置信度冒充低风险分。
+> 🔌 **Aimili Gateway 备用连接候选**: [gateway-candidates.json](output/gateway-candidates.json)。该文件只包含已通过 Actions 测活、住宅/移动网络交叉核验、Scamalytics ≤15、Ping0 原生 IP、Ping0 风控 ≤15%，且 TikTok/跨境电商/社媒运营/AI 四类场景均 ≥4 星的 VLESS/VMess/Trojan/Shadowsocks 候选；质量证据超过 7 天或无法复核时会直接退出 Gateway 候选，不会降级采用未知或高风险 IP。nyVPS 接入前仍会进行本机出口复检，且保留每个节点的上游来源。
 
 ---
 
@@ -2698,6 +2881,7 @@ def main():
     if not unique_nodes:
         print("[!] 分类后无存活节点 — 保留上次 output")
         return
+    enrich_gateway_quality(unique_nodes)
     total, res = export_all(unique_nodes, residential, non_residential)
     update_readme(total, res)
 

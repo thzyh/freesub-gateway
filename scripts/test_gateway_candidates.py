@@ -6,6 +6,7 @@ import json
 import os
 import tempfile
 import unittest
+from datetime import datetime, timezone
 
 import main_v2 as mv
 
@@ -18,6 +19,7 @@ class GatewayCandidateTests(unittest.TestCase):
         self.tmp = tempfile.TemporaryDirectory()
         mv.OUTPUT_DIR = self.tmp.name
         mv.GATEWAY_CANDIDATES_PATH = os.path.join(self.tmp.name, "gateway-candidates.json")
+        self.checked_at = datetime.now(timezone.utc).isoformat()
 
     def tearDown(self):
         mv.OUTPUT_DIR = self.old_output
@@ -36,13 +38,26 @@ class GatewayCandidateTests(unittest.TestCase):
             "proto": "vless",
             "country": "IN",
             "exit_ip": "203.0.113.10",
-            "net_type": "datacenter",
+            "net_type": "residential",
             "asn": 64500,
             "isp": "Example ISP",
             "latency_ms": 120,
             "speed_bps": 500000,
             "confidence": 80,
             "fraud_score": 12,
+            "gateway_quality": {
+                "source": "ping0",
+                "risk_score": 12,
+                "native_ip": True,
+                "native_label": "原生 IP",
+                "scenario_stars": {
+                    "tiktok": 5,
+                    "cross_border_ecommerce": 4,
+                    "social_media": 5,
+                    "ai": 4,
+                },
+                "checked_at": self.checked_at,
+            },
             "mitm_risk": False,
             "is_stalled": False,
             "tested_at": "2026-09-16T00:00:00+00:00",
@@ -53,7 +68,7 @@ class GatewayCandidateTests(unittest.TestCase):
         self.assertEqual(count, 1)
         with open(mv.GATEWAY_CANDIDATES_PATH, encoding="utf-8") as stream:
             payload = json.load(stream)
-        self.assertEqual(payload["schema_version"], 1)
+        self.assertEqual(payload["schema_version"], 2)
         candidate = payload["candidates"][0]
         self.assertEqual(candidate["protocol"], "vless")
         self.assertEqual(candidate["upstream_sources"], [
@@ -61,8 +76,39 @@ class GatewayCandidateTests(unittest.TestCase):
         ])
         self.assertRegex(candidate["candidate_id"], r"^fs-[0-9a-f]{24}$")
         self.assertEqual(candidate["candidate_id"], mv.gateway_candidate_id(item))
-        self.assertEqual(candidate["risk_score"], 50)
+        self.assertEqual(candidate["risk_score"], 12)
+        self.assertTrue(candidate["quality"]["native_ip"])
+        self.assertEqual(candidate["quality"]["scenario_stars"]["cross_border_ecommerce"], 4)
         self.assertEqual(candidate["risk_signals"]["fraud_score"], 12)
+
+    def test_feed_rejects_missing_or_unqualified_ping0_evidence(self):
+        base = {
+            "proto": "vless", "country": "TW", "exit_ip": "122.118.150.43",
+            "net_type": "residential", "latency_ms": 20, "speed_bps": 200000,
+            "confidence": 90, "fraud_score": 0, "ip_api_proxy": False,
+            "ip_api_hosting": False, "mitm_risk": False, "is_stalled": False,
+            "outbound": {"type": "vless", "server": "example.com", "server_port": 443},
+        }
+        qualified = {
+            "source": "ping0", "risk_score": 9, "native_ip": True,
+            "native_label": "原生 IP", "checked_at": self.checked_at,
+            "scenario_stars": {
+                "tiktok": 5, "cross_border_ecommerce": 5,
+                "social_media": 5, "ai": 5,
+            },
+        }
+        rejected = [
+            dict(base),
+            dict(base, gateway_quality=dict(qualified, risk_score=16)),
+            dict(base, gateway_quality=dict(qualified, native_ip=False, native_label="广播 IP")),
+            dict(base, gateway_quality=dict(qualified, scenario_stars=dict(qualified["scenario_stars"], ai=3))),
+            dict(base, gateway_quality=dict(qualified), net_type="datacenter"),
+            dict(base, gateway_quality=dict(qualified), ip_api_proxy=True),
+            dict(base, gateway_quality=dict(qualified), ip_api_hosting=True),
+        ]
+        self.assertEqual(mv.export_gateway_candidates(rejected), 0)
+
+        self.assertEqual(mv.export_gateway_candidates([dict(base, gateway_quality=qualified)]), 1)
 
     def test_feed_excludes_unsupported_protocols_and_marks_risk(self):
         base = {
@@ -87,7 +133,7 @@ class GatewayCandidateTests(unittest.TestCase):
             "proto": "shadowsocks",
             "country": "US",
             "exit_ip": "37.19.198.244",
-            "net_type": "datacenter",
+            "net_type": "residential",
             "asn": 212238,
             "isp": "Datacamp",
             "latency_ms": 60,
@@ -107,12 +153,11 @@ class GatewayCandidateTests(unittest.TestCase):
             },
         }
 
-        self.assertEqual(mv.gateway_risk_score(item), 90)
         self.assertEqual(mv.export_gateway_candidates([item]), 0)
 
     def test_unknown_fraud_does_not_turn_confidence_into_low_risk(self):
         item = {
-            "net_type": "datacenter",
+            "net_type": "residential",
             "confidence": 90,
             "fraud_score": -1,
             "ip_api_proxy": False,
@@ -121,7 +166,7 @@ class GatewayCandidateTests(unittest.TestCase):
             "is_stalled": False,
         }
 
-        self.assertEqual(mv.gateway_risk_score(item), 50)
+        self.assertFalse(mv.gateway_quality_is_eligible(item))
 
     def test_feed_merges_duplicate_stable_ids_and_provenance(self):
         outbound = {
@@ -130,9 +175,17 @@ class GatewayCandidateTests(unittest.TestCase):
         }
         common = {
             "proto": "trojan", "country": "US", "exit_ip": "203.0.113.20",
-            "net_type": "datacenter", "asn": 64500, "isp": "Example ISP",
+            "net_type": "residential", "asn": 64500, "isp": "Example ISP",
             "confidence": 80, "fraud_score": 10, "mitm_risk": False,
             "is_stalled": False, "outbound": outbound,
+            "gateway_quality": {
+                "source": "ping0", "risk_score": 10, "native_ip": True,
+                "native_label": "原生 IP", "checked_at": self.checked_at,
+                "scenario_stars": {
+                    "tiktok": 5, "cross_border_ecommerce": 5,
+                    "social_media": 5, "ai": 5,
+                },
+            },
         }
         slower = dict(common, latency_ms=300, speed_bps=100000,
                       upstream_sources=["https://source.example/a"])
@@ -147,6 +200,27 @@ class GatewayCandidateTests(unittest.TestCase):
         self.assertEqual(candidates[0]["upstream_sources"], [
             "https://source.example/a", "https://source.example/b"
         ])
+
+    def test_parse_ping0_quality_html(self):
+        fixture = os.path.join(os.path.dirname(__file__), "fixtures", "ping0-qualified.html")
+        with open(fixture, encoding="utf-8") as stream:
+            quality = mv.parse_ping0_quality_html(
+                stream.read(), "122.118.150.43", datetime(2026, 9, 17, tzinfo=timezone.utc)
+            )
+        self.assertEqual(quality["risk_score"], 9)
+        self.assertTrue(quality["native_ip"])
+        self.assertEqual(quality["scenario_stars"], {
+            "tiktok": 5,
+            "cross_border_ecommerce": 5,
+            "social_media": 5,
+            "ai": 5,
+        })
+
+    def test_parse_ping0_quality_rejects_captcha_and_wrong_ip(self):
+        self.assertIsNone(mv.parse_ping0_quality_html('<div class="cf-turnstile"></div>', "122.118.150.43"))
+        fixture = os.path.join(os.path.dirname(__file__), "fixtures", "ping0-qualified.html")
+        with open(fixture, encoding="utf-8") as stream:
+            self.assertIsNone(mv.parse_ping0_quality_html(stream.read(), "111.246.9.5"))
 
 
 if __name__ == "__main__":

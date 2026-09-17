@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "entries": {
+    "122.118.150.43": {
+      "source": "ping0",
+      "risk_score": 9,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-09-17T14:45:00+00:00"
+    },
+    "111.246.9.5": {
+      "source": "ping0",
+      "risk_score": 4,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-09-17T14:45:00+00:00"
+    }
+  }
+}

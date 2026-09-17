@@ -4,7 +4,7 @@
 > ⚡ **真实可用保障**: 所有节点由 `sing-box vv1.14.0` 内核建立实际代理隧道, 完成真实 HTTPS 双向传输握手 + 出口 IP 穿透验证 + Cloudflare 限速下载断流检测 + TLS 证书校验 (MITM 劫持识别), 拒绝虚假通畅、断流节点与高危劫持节点。
 > 🛡️ **全协议支持**: VLESS (Reality/Vision) · VMESS · Trojan · Shadowsocks · Hysteria2 · TUIC · AnyTLS
 
-> 🔌 **Aimili Gateway 备用连接候选**: [gateway-candidates.json](output/gateway-candidates.json)。该文件只包含已通过 Actions 测活、综合风险分低于 75 且未被 ip-api 标记为代理出口的 VLESS/VMess/Trojan/Shadowsocks 候选；nyVPS 接入前仍必须进行本机复检，且保留每个节点的上游来源。`risk_score` 是综合筛选分，`risk_signals.fraud_score` 才是实际取得的 Scamalytics 分数；无法取得时为 `null`，不会再用网络分类置信度冒充低风险分。
+> 🔌 **Aimili Gateway 备用连接候选**: [gateway-candidates.json](output/gateway-candidates.json)。该文件只包含已通过 Actions 测活、住宅/移动网络交叉核验、Scamalytics ≤15、Ping0 原生 IP、Ping0 风控 ≤15%，且 TikTok/跨境电商/社媒运营/AI 四类场景均 ≥4 星的 VLESS/VMess/Trojan/Shadowsocks 候选；质量证据超过 7 天或无法复核时会直接退出 Gateway 候选，不会降级采用未知或高风险 IP。nyVPS 接入前仍会进行本机出口复检，且保留每个节点的上游来源。
 
 ---
 
