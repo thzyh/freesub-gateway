@@ -2033,6 +2033,11 @@ def classify_and_export(test_results: list):
             "asn": asn,
             "org": org,
             "isp": r.get("exit_isp_online") or (rec.get("isp") if rec else ""),
+            # Keep the original ip-api safety signals.  Network classification
+            # confidence says how certain the *type* is; it is not a fraud score.
+            "ip_api_proxy": bool(rec.get("proxy")) if rec else False,
+            "ip_api_hosting": bool(rec.get("hosting")) if rec else False,
+            "ip_api_mobile": bool(rec.get("mobile")) if rec else False,
             "latency_ms": r["latency_ms"],
             "speed_bps": r["speed_bps"],
             "mitm_risk": r["mitm_risk"],
@@ -2190,6 +2195,7 @@ def make_node_name(item, idx, force_residential=False):
 
 
 GATEWAY_PROTOCOLS = {"vless", "vmess", "trojan", "shadowsocks"}
+GATEWAY_RISK_REJECT_THRESHOLD = 75
 
 
 def gateway_candidate_id(item):
@@ -2203,14 +2209,37 @@ def gateway_candidate_id(item):
 
 
 def gateway_risk_score(item):
-    """Normalize existing safety signals to a conservative 0..100 score."""
+    """Combine independent safety signals into a conservative 0..100 score.
+
+    Classification confidence deliberately does not participate here.  A 90%
+    confidence that an address is hosted in a datacenter must never be rendered
+    as a risk score of 10.
+    """
     if item.get("mitm_risk") or item.get("is_stalled"):
         return 100
+
     fraud = item.get("fraud_score", -1)
-    confidence = item.get("confidence", 0)
-    score = max(0, min(100, 100 - int(confidence or 0)))
+    score = 0
     if isinstance(fraud, (int, float)) and fraud >= 0:
-        score = max(score, min(100, int(fraud)))
+        score = min(100, int(fraud))
+
+    # These are conservative floors for categorical signals, not invented
+    # third-party fraud scores.  Explicit proxy exits are unsuitable for the
+    # Gateway backup pool; hosting/datacenter addresses remain eligible unless
+    # another signal crosses the rejection threshold.
+    network_type = str(item.get("net_type") or "unknown").lower()
+    type_floor = {
+        "residential": 30,
+        "mobile": 30,
+        "datacenter": 50,
+        "cdn": 65,
+        "unknown": 70,
+    }.get(network_type, 70)
+    score = max(score, type_floor)
+    if item.get("ip_api_hosting"):
+        score = max(score, 50)
+    if item.get("ip_api_proxy"):
+        score = max(score, 90)
     return score
 
 
@@ -2228,6 +2257,9 @@ def export_gateway_candidates(nodes):
         country = str(item.get("country") or "").strip().upper()
         if protocol not in GATEWAY_PROTOCOLS or not outbound or len(country) != 2 or not country.isalpha():
             continue
+        risk_score = gateway_risk_score(item)
+        if risk_score >= GATEWAY_RISK_REJECT_THRESHOLD:
+            continue
         candidate_id = gateway_candidate_id(item)
         candidate = {
             "candidate_id": candidate_id,
@@ -2240,7 +2272,14 @@ def export_gateway_candidates(nodes):
             "upstream_sources": sorted(set(item.get("upstream_sources") or [])),
             "latency_ms": int(item.get("latency_ms") or 0),
             "speed_bps": int(item.get("speed_bps") or 0),
-            "risk_score": gateway_risk_score(item),
+            "risk_score": risk_score,
+            "risk_signals": {
+                "fraud_score": item.get("fraud_score")
+                if isinstance(item.get("fraud_score"), (int, float)) and item.get("fraud_score") >= 0
+                else None,
+                "ip_api_proxy": bool(item.get("ip_api_proxy")),
+                "ip_api_hosting": bool(item.get("ip_api_hosting")),
+            },
             "tested_at": item.get("tested_at") or datetime.now(timezone.utc).isoformat(),
             "config": outbound,
         }
@@ -2434,13 +2473,13 @@ def update_readme(total_count, res_count):
 > ⚡ **真实可用保障**: 所有节点由 `sing-box v{SINGBOX_VERSION}` 内核建立实际代理隧道, 完成真实 HTTPS 双向传输握手 + 出口 IP 穿透验证 + Cloudflare 限速下载断流检测 + TLS 证书校验 (MITM 劫持识别), 拒绝虚假通畅、断流节点与高危劫持节点。
 > 🛡️ **全协议支持**: VLESS (Reality/Vision) · VMESS · Trojan · Shadowsocks · Hysteria2 · TUIC · AnyTLS
 
-> 🔌 **Aimili Gateway 备用连接候选**: [gateway-candidates.json](output/gateway-candidates.json)。该文件只包含已通过 Actions 测活的 VLESS/VMess/Trojan/Shadowsocks 候选；nyVPS 接入前仍必须进行本机复检，且保留每个节点的上游来源。
+> 🔌 **Aimili Gateway 备用连接候选**: [gateway-candidates.json](output/gateway-candidates.json)。该文件只包含已通过 Actions 测活、综合风险分低于 75 且未被 ip-api 标记为代理出口的 VLESS/VMess/Trojan/Shadowsocks 候选；nyVPS 接入前仍必须进行本机复检，且保留每个节点的上游来源。`risk_score` 是综合筛选分，`risk_signals.fraud_score` 才是实际取得的 Scamalytics 分数；无法取得时为 `null`，不会再用网络分类置信度冒充低风险分。
 
 ---
 
 ## 📌 全部节点总订阅链接
 
-| 客户端 / 格式类型 | 节点总数 | 免翻 CDN 订阅直链 (国内直连) | 官方原生 Raw 直链 (开启代理) |
+| 客户端 / 格式类型 | 节点总数 | 免翻 CDN 订阅直链 (国内直连) | GitHub 官方 Raw 直链 (开启代理) |
 | :--- | :---: | :--- | :--- |
 | 🚀 **Clash (YAML 格式)** | `{total_count}` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/{repo_name}@main/output/clash.yaml) | [官方 Raw 直链](https://raw.githubusercontent.com/{repo_name}/main/output/clash.yaml) |
 | ⚡ **V2RayN (Base64 格式)** | `{total_count}` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/{repo_name}@main/output/v2ray.txt) | [官方 Raw 直链](https://raw.githubusercontent.com/{repo_name}/main/output/v2ray.txt) |

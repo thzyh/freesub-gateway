@@ -4,13 +4,13 @@
 > ⚡ **真实可用保障**: 所有节点由 `sing-box vv1.14.0` 内核建立实际代理隧道, 完成真实 HTTPS 双向传输握手 + 出口 IP 穿透验证 + Cloudflare 限速下载断流检测 + TLS 证书校验 (MITM 劫持识别), 拒绝虚假通畅、断流节点与高危劫持节点。
 > 🛡️ **全协议支持**: VLESS (Reality/Vision) · VMESS · Trojan · Shadowsocks · Hysteria2 · TUIC · AnyTLS
 
-> 🔌 **Aimili Gateway 备用连接候选**: [gateway-candidates.json](output/gateway-candidates.json)。该文件只包含已通过 Actions 测活的 VLESS/VMess/Trojan/Shadowsocks 候选；nyVPS 接入前仍必须进行本机复检，且保留每个节点的上游来源。
+> 🔌 **Aimili Gateway 备用连接候选**: [gateway-candidates.json](output/gateway-candidates.json)。该文件只包含已通过 Actions 测活、综合风险分低于 75 且未被 ip-api 标记为代理出口的 VLESS/VMess/Trojan/Shadowsocks 候选；nyVPS 接入前仍必须进行本机复检，且保留每个节点的上游来源。`risk_score` 是综合筛选分，`risk_signals.fraud_score` 才是实际取得的 Scamalytics 分数；无法取得时为 `null`，不会再用网络分类置信度冒充低风险分。
 
 ---
 
 ## 📌 全部节点总订阅链接
 
-| 客户端 / 格式类型 | 节点总数 | 免翻 CDN 订阅直链 (国内直连) | 官方原生 Raw 直链 (开启代理) |
+| 客户端 / 格式类型 | 节点总数 | 免翻 CDN 订阅直链 (国内直连) | GitHub 官方 Raw 直链 (开启代理) |
 | :--- | :---: | :--- | :--- |
 | 🚀 **Clash (YAML 格式)** | `650` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/thzyh/freesub-gateway@main/output/clash.yaml) | [官方 Raw 直链](https://raw.githubusercontent.com/thzyh/freesub-gateway/main/output/clash.yaml) |
 | ⚡ **V2RayN (Base64 格式)** | `650` | [免翻 CDN 直链](https://cdn.jsdelivr.net/gh/thzyh/freesub-gateway@main/output/v2ray.txt) | [官方 Raw 直链](https://raw.githubusercontent.com/thzyh/freesub-gateway/main/output/v2ray.txt) |

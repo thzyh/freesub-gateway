@@ -28,6 +28,10 @@ jobs:
         run: |
           pip install -r scripts/requirements.txt
 
+      - name: Run Gateway feed regression tests
+        run: |
+          python scripts/test_gateway_candidates.py
+
       - name: Run Real-Prober and Classifier (sing-box v1.14 全协议)
         run: |
           python scripts/main_v2.py
