@@ -52,6 +52,32 @@
         "ai": 5
       },
       "checked_at": "2026-09-17T20:46:38.838297+00:00"
+    },
+    "2001:b011:3802:c9b:b2a6:82e3:8970:4a73": {
+      "source": "ping0",
+      "risk_score": 3,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-09-18T20:10:36.766095+00:00"
+    },
+    "122.118.239.120": {
+      "source": "ping0",
+      "risk_score": 1,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-09-18T20:10:37.420427+00:00"
     }
   }
 }
