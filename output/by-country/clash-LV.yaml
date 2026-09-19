@@ -5,14 +5,7 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇱🇻 拉脱维亚 (Latvia) 01 - xiaohe
-  server: 185.135.86.175
-  port: 9033
-  udp: true
-  type: ss
-  cipher: aes-256-cfb
-  password: UTJA57ypk2XKQpnm
-- name: 🇱🇻 拉脱维亚 (Latvia) 02 - xiaohe
-  server: 46.243.142.227
+  server: shprcdn.quest
   port: 10443
   udp: true
   type: vless
@@ -21,7 +14,7 @@ proxies:
   reality-opts:
     public-key: KoNQ52irUOW-fybKx-gUKCuHpMnHhgQ_skjd8TmqJ2k
   servername: shprcdn.quest
-  client-fingerprint: random
+  client-fingerprint: chrome
   network: grpc
   grpc-opts:
     grpc-service-name: google.storage.v2.Storage
@@ -31,13 +24,11 @@ proxy-groups:
   proxies:
   - AUTO
   - 🇱🇻 拉脱维亚 (Latvia) 01 - xiaohe
-  - 🇱🇻 拉脱维亚 (Latvia) 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🇱🇻 拉脱维亚 (Latvia) 01 - xiaohe
-  - 🇱🇻 拉脱维亚 (Latvia) 02 - xiaohe
 rules:
 - MATCH,PROXIES

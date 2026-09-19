@@ -1,6 +1,117 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-19T09:56:35.013342+00:00",
+  "generated_at": "2026-09-19T15:02:07.678599+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "fs-65f35dce3390027f50cb3608",
+      "protocol": "vmess",
+      "country": "TW",
+      "exit_ip": "125.224.51.63",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 6296,
+      "speed_bps": 312182,
+      "risk_score": 2,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 2,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-19T15:02:06.930409+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-09-19T15:01:55.584033+00:00",
+      "config": {
+        "type": "vmess",
+        "tag": "node",
+        "server": "dee2309db4se3g5s1d65g672c6641e25.oylfmxz.cn",
+        "server_port": 443,
+        "uuid": "d90e4077-bc7e-414d-a650-70bf1baae4d6",
+        "security": "auto",
+        "tls": {
+          "enabled": true,
+          "server_name": "dee2309db4se3g5s1d65g672c6641e25.oylfmxz.cn",
+          "insecure": false
+        },
+        "transport": {
+          "type": "ws",
+          "path": "/",
+          "headers": {
+            "Host": "dee2309db4se3g5s1d65g672c6641e25.oylfmxz.cn"
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "fs-cde02e3d3cbd4f79f67abf2e",
+      "protocol": "vmess",
+      "country": "TW",
+      "exit_ip": "125.230.69.163",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 1699,
+      "speed_bps": 948476,
+      "risk_score": 8,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 8,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-19T15:02:06.869364+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-09-19T15:01:59.136173+00:00",
+      "config": {
+        "type": "vmess",
+        "tag": "node",
+        "server": "dee2309db4944c248b6d4672c6641e25.oylfmxz.cn",
+        "server_port": 443,
+        "uuid": "d90e4077-bc7e-414d-a650-70bf1baae4d6",
+        "security": "auto",
+        "tls": {
+          "enabled": true,
+          "server_name": "dee2309db4944c248b6d4672c6641e25.oylfmxz.cn",
+          "insecure": false
+        },
+        "transport": {
+          "type": "ws",
+          "path": "/",
+          "headers": {
+            "Host": "dee2309db4944c248b6d4672c6641e25.oylfmxz.cn"
+          }
+        }
+      }
+    }
+  ]
 }
