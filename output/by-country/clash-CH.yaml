@@ -5,6 +5,18 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
+  server: 34.158.23.115
+  port: 443
+  udp: true
+  type: vless
+  uuid: a18f08dc-76ae-453a-98f5-d41eab7e649b
+  tls: true
+  reality-opts:
+    public-key: f8aV8naD8NKt_mLKaOou0qUrIM1Ge25kJNxywpF3OB0
+    short-id: d016c76007f78038
+  servername: www.cloudflare.com
+  client-fingerprint: safari
+- name: 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
   server: 151.242.2.81
   port: 443
   udp: true
@@ -24,11 +36,13 @@ proxy-groups:
   proxies:
   - AUTO
   - 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
+  - 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🇨🇭 瑞士 (Switzerland) 01 - xiaohe
+  - 🇨🇭 瑞士 (Switzerland) 02 - xiaohe
 rules:
 - MATCH,PROXIES

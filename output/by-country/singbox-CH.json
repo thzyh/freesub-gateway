@@ -6,6 +6,26 @@
     {
       "type": "vless",
       "tag": "🇨🇭 瑞士 (Switzerland) 01 - xiaohe",
+      "server": "34.158.23.115",
+      "server_port": 443,
+      "uuid": "a18f08dc-76ae-453a-98f5-d41eab7e649b",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.cloudflare.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "safari"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "f8aV8naD8NKt_mLKaOou0qUrIM1Ge25kJNxywpF3OB0",
+          "short_id": "d016c76007f78038"
+        }
+      }
+    },
+    {
+      "type": "vless",
+      "tag": "🇨🇭 瑞士 (Switzerland) 02 - xiaohe",
       "server": "151.242.2.81",
       "server_port": 443,
       "uuid": "0a2dde28-70da-4863-a06f-35d007d94d35",
@@ -27,14 +47,16 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇨🇭 瑞士 (Switzerland) 01 - xiaohe"
+        "🇨🇭 瑞士 (Switzerland) 01 - xiaohe",
+        "🇨🇭 瑞士 (Switzerland) 02 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇨🇭 瑞士 (Switzerland) 01 - xiaohe"
+        "🇨🇭 瑞士 (Switzerland) 01 - xiaohe",
+        "🇨🇭 瑞士 (Switzerland) 02 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
