@@ -1,50 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-20T02:09:38.775706+00:00",
+  "generated_at": "2026-09-20T10:19:32.522697+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": [
-    {
-      "candidate_id": "fs-996dbda0016815c9615c0841",
-      "protocol": "shadowsocks",
-      "country": "TW",
-      "exit_ip": "2001:b011:3802:cad:87bb:2afe:7bb4:c971",
-      "network_type": "residential",
-      "asn": 3462,
-      "isp": "Chunghwa Telecom",
-      "upstream_sources": [
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
-      ],
-      "latency_ms": 456,
-      "speed_bps": 1150482,
-      "risk_score": 5,
-      "quality": {
-        "source": "ping0",
-        "risk_score": 5,
-        "native_ip": true,
-        "native_label": "原生 IP",
-        "scenario_stars": {
-          "tiktok": 5,
-          "cross_border_ecommerce": 5,
-          "social_media": 5,
-          "ai": 5
-        },
-        "checked_at": "2026-09-19T02:08:23.695555+00:00"
-      },
-      "risk_signals": {
-        "fraud_score": 0,
-        "ip_api_proxy": false,
-        "ip_api_hosting": false
-      },
-      "tested_at": "2026-09-20T02:08:17.564967+00:00",
-      "config": {
-        "type": "shadowsocks",
-        "tag": "node",
-        "server": "36.224.185.173",
-        "server_port": 50099,
-        "method": "chacha20-ietf-poly1305",
-        "password": "b1ae0fce-9340-4f2e-882d-fdb2218e2e2b"
-      }
-    }
-  ]
+  "candidates": []
 }
