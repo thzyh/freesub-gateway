@@ -5,17 +5,14 @@
   "outbounds": [
     {
       "type": "vless",
-      "tag": "🇮🇶 IQ 01 - xiaohe",
-      "server": "104.17.148.22",
-      "server_port": 443,
-      "uuid": "0432902e-6604-40cd-bbd0-57ab4e5d909f",
+      "tag": "🇧🇷 巴西 (Brazil) 01 - xiaohe",
+      "server": "188.166.49.168",
+      "server_port": 2083,
+      "uuid": "d342d11e-d424-4583-b36e-524ab1f0afa4",
       "tls": {
         "enabled": true,
-        "server_name": "bPB-4dc4958B.hXjkcgHcHv.woRkeRs.deV",
-        "insecure": false,
-        "alpn": [
-          "http/1.1"
-        ],
+        "server_name": "cdn8848.776676.xyz",
+        "insecure": true,
         "utls": {
           "enabled": true,
           "fingerprint": "chrome"
@@ -23,9 +20,8 @@
       },
       "transport": {
         "type": "ws",
-        "path": "/eyJqdW5rIjoiOENNZnB6WTgiLCJwcm90b2NvbCI6InZsIiwibW9kZSI6InByb3h5aXAiLCJwYW5lbElQcyI6W119",
         "headers": {
-          "Host": "bpb-4dc4958b.hxjkcghchv.workers.dev"
+          "Host": "cdn8848.776676.xyz"
         }
       }
     },
@@ -34,14 +30,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇮🇶 IQ 01 - xiaohe"
+        "🇧🇷 巴西 (Brazil) 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇮🇶 IQ 01 - xiaohe"
+        "🇧🇷 巴西 (Brazil) 01 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
