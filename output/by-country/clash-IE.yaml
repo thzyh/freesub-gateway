@@ -18,7 +18,7 @@ proxies:
   servername: www.tesla.com
   client-fingerprint: chrome
 - name: 🇮🇪 爱尔兰 (Ireland) 02 - xiaohe
-  server: 50.7.5.186
+  server: ireland-new.failspace.top
   port: 443
   udp: true
   type: vless
