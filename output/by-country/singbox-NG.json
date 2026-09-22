@@ -4,19 +4,15 @@
   },
   "outbounds": [
     {
-      "type": "vmess",
-      "tag": "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe",
-      "server": "dee2309db4944c248b6d4372c6641e7b.oylfmxz.cn",
+      "type": "trojan",
+      "tag": "🇳🇬 尼日利亚 (Nigeria) 01 - xiaohe",
+      "server": "103.97.91.17",
       "server_port": 443,
-      "uuid": "d90e4077-bc7e-414d-a650-70bf1baae4d6",
-      "security": "auto",
+      "password": "600421cf-11d7-429f-a65b-c30397f1bc03",
       "tls": {
         "enabled": true,
-        "server_name": "dee2309db4944c248b6d4372c6641e7b.oylfmxz.cn",
+        "server_name": "la.freeguard.org",
         "insecure": false
-      },
-      "transport": {
-        "type": "ws"
       }
     },
     {
@@ -24,14 +20,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe"
+        "🇳🇬 尼日利亚 (Nigeria) 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇭🇰 中国香港 (Hong Kong) 01 (家宽) - xiaohe"
+        "🇳🇬 尼日利亚 (Nigeria) 01 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
