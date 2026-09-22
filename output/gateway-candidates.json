@@ -1,6 +1,63 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-22T15:57:28.821010+00:00",
+  "generated_at": "2026-09-22T20:41:44.079068+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "fs-ca7d310f1b5e667a141b0b2b",
+      "protocol": "vless",
+      "country": "TW",
+      "exit_ip": "1.165.40.75",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 978,
+      "speed_bps": 631796,
+      "risk_score": 1,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 1,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-22T20:41:43.497043+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-09-22T20:41:18.819633+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "ttszhrmghgdssbkqf.cfooov.xyz",
+        "server_port": 42241,
+        "uuid": "55848813-689e-4a39-82cf-00748cbc7289",
+        "flow": "xtls-rprx-vision",
+        "tls": {
+          "enabled": true,
+          "server_name": "www.apple.com",
+          "utls": {
+            "enabled": true,
+            "fingerprint": "chrome"
+          },
+          "reality": {
+            "enabled": true,
+            "public_key": "lFZuIsmEomT8zwJ2f7wTI-C87oA78R9amDVHgemYmmQ",
+            "short_id": "1cb574e4d5d8"
+          }
+        }
+      }
+    }
+  ]
 }
