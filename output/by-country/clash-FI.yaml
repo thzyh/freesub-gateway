@@ -5,47 +5,28 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇫🇮 芬兰 (Finland) 01 - xiaohe
-  server: 92.255.79.246
-  port: 443
+  server: 185.79.138.71
+  port: 448
   udp: true
   type: vless
-  uuid: 8057eabc-921d-0001-9acb-80ccc6b48379
+  uuid: 0b0915d7-6800-4580-a44b-77d84f105e6a
   tls: true
   reality-opts:
-    public-key: 8P2rVrZZ8v1q7WpYiRWnZ_nk2UI_4PqpN_DdZP91700
-  servername: supbober.mafioznik.xyz
-  client-fingerprint: firefox
-  network: grpc
-  grpc-opts:
-    grpc-service-name: Lizat
-- name: 🇫🇮 芬兰 (Finland) 02 - xiaohe
-  server: 151.101.56.7
-  port: 443
-  udp: true
-  type: vless
-  uuid: 8abb648a-b004-42a4-aa05-49cdc2f94d4e
-  tls: true
-  servername: global.fastly.com
-  skip-cert-verify: false
-  client-fingerprint: firefox
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: kayko.global.ssl.fastly.net
+    public-key: CsDgNRcCwCkPIslfZpKTIK71KFpIFNsotbdzKcZVoH8
+    short-id: cd21e552537c7c0b
+  servername: www.samsung.com
+  client-fingerprint: chrome
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
   - 🇫🇮 芬兰 (Finland) 01 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🇫🇮 芬兰 (Finland) 01 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 02 - xiaohe
 rules:
 - MATCH,PROXIES

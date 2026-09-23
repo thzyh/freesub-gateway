@@ -4,47 +4,46 @@
   },
   "outbounds": [
     {
-      "type": "vless",
+      "type": "trojan",
       "tag": "🌐 其他地区 (Other) 01 - xiaohe",
-      "server": "172.64.155.209",
+      "server": "188.114.97.6",
       "server_port": 443,
-      "uuid": "1f87cbe7-316b-49ba-a416-d3c2af72ed50",
+      "password": "humanity",
       "tls": {
         "enabled": true,
-        "server_name": "spidertest.vibenest.net",
+        "server_name": "www.pleadcourt.org",
         "insecure": false,
         "alpn": [
           "http/1.1"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
+        ]
       },
       "transport": {
         "type": "ws",
-        "path": "/ws/1f87cbe7-316b-49ba-a416-d3c2af72ed50",
+        "path": "/assignment",
         "headers": {
-          "Host": "spidertest.vibenest.net"
+          "Host": "www.pleadcourt.org"
         }
       }
     },
     {
       "type": "trojan",
       "tag": "🌐 其他地区 (Other) 02 - xiaohe",
-      "server": "188.114.98.0",
+      "server": "188.114.97.6",
       "server_port": 443,
       "password": "humanity",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com",
-        "insecure": false
+        "server_name": "www.pleadcourt.org",
+        "insecure": false,
+        "alpn": [
+          "http/1.1"
+        ]
       },
       "transport": {
         "type": "ws",
         "path": "/assignment",
         "headers": {
-          "Host": "www.calmlunch.com"
+          "Host": "www.pleadcourt.org"
         }
       }
     },

@@ -5,27 +5,23 @@ mode: rule
 log-level: info
 proxies:
 - name: 🌐 其他地区 (Other) 01 - xiaohe
-  server: 172.64.155.209
-  port: 443
-  udp: true
-  type: vless
-  uuid: 1f87cbe7-316b-49ba-a416-d3c2af72ed50
-  tls: true
-  servername: spidertest.vibenest.net
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /ws/1f87cbe7-316b-49ba-a416-d3c2af72ed50
-    headers:
-      Host: spidertest.vibenest.net
-- name: 🌐 其他地区 (Other) 02 - xiaohe
-  server: 188.114.98.0
+  server: 188.114.97.6
   port: 443
   udp: true
   type: trojan
   password: humanity
-  sni: www.calmlunch.com
+  sni: www.pleadcourt.org
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /assignment
+- name: 🌐 其他地区 (Other) 02 - xiaohe
+  server: 188.114.97.6
+  port: 443
+  udp: true
+  type: trojan
+  password: humanity
+  sni: www.pleadcourt.org
   skip-cert-verify: false
   network: ws
   ws-opts:
