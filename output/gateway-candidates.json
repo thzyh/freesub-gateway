@@ -1,25 +1,26 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-25T10:47:56.002078+00:00",
+  "generated_at": "2026-09-25T16:08:17.773359+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-72a98d5c46568a8ea0f423ac",
-      "protocol": "vmess",
+      "candidate_id": "fs-374de9104ac0519d6482e6a3",
+      "protocol": "vless",
       "country": "TW",
-      "exit_ip": "61.223.124.196",
+      "exit_ip": "118.167.230.191",
       "network_type": "residential",
       "asn": 3462,
       "isp": "Chunghwa Telecom",
       "upstream_sources": [
-        "https://raw.githubusercontent.com/10ium/telegram-configs-collector/main/security/tls"
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 1400,
-      "speed_bps": 782730,
-      "risk_score": 5,
+      "latency_ms": 1896,
+      "speed_bps": 935804,
+      "risk_score": 4,
       "quality": {
         "source": "ping0",
-        "risk_score": 5,
+        "risk_score": 4,
         "native_ip": true,
         "native_label": "原生 IP",
         "scenario_stars": {
@@ -28,31 +29,31 @@
           "social_media": 5,
           "ai": 5
         },
-        "checked_at": "2026-09-25T10:47:55.515494+00:00"
+        "checked_at": "2026-09-25T16:08:17.008116+00:00"
       },
       "risk_signals": {
         "fraud_score": 0,
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-09-25T10:47:49.408765+00:00",
+      "tested_at": "2026-09-25T16:08:07.149331+00:00",
       "config": {
-        "type": "vmess",
+        "type": "vless",
         "tag": "node",
-        "server": "61.223.124.196",
-        "server_port": 443,
-        "uuid": "d90e4077-bc7e-414d-a650-70bf1baae4d6",
-        "security": "auto",
+        "server": "118.167.230.191",
+        "server_port": 24215,
+        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
         "tls": {
           "enabled": true,
-          "server_name": "24864168545164.oylfmxz.cn",
-          "insecure": false
-        },
-        "transport": {
-          "type": "ws",
-          "path": "/",
-          "headers": {
-            "Host": "24864168545164.oylfmxz.cn"
+          "server_name": "addons.mozilla.org",
+          "utls": {
+            "enabled": true,
+            "fingerprint": "edge"
+          },
+          "reality": {
+            "enabled": true,
+            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
+            "short_id": ""
           }
         }
       }
