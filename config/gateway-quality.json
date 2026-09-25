@@ -234,6 +234,71 @@
         "ai": 1
       },
       "checked_at": "2026-09-23T02:10:20.627117+00:00"
+    },
+    "2001:b011:3802:ab2e:3a04:b446:2110:8e35": {
+      "source": "ping0",
+      "risk_score": 6,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-09-25T02:15:34.406615+00:00"
+    },
+    "203.198.86.98": {
+      "source": "ping0",
+      "risk_score": 10,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 3,
+        "cross_border_ecommerce": 3,
+        "social_media": 3,
+        "ai": 1
+      },
+      "checked_at": "2026-09-25T02:15:35.035511+00:00"
+    },
+    "112.120.221.250": {
+      "source": "ping0",
+      "risk_score": 10,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 3,
+        "cross_border_ecommerce": 3,
+        "social_media": 3,
+        "ai": 1
+      },
+      "checked_at": "2026-09-25T02:15:34.973966+00:00"
+    },
+    "209.9.201.153": {
+      "source": "ping0",
+      "risk_score": 16,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 4,
+        "cross_border_ecommerce": 4,
+        "social_media": 4,
+        "ai": 1
+      },
+      "checked_at": "2026-09-25T02:15:34.859971+00:00"
+    },
+    "61.223.69.253": {
+      "source": "ping0",
+      "risk_score": 8,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-09-25T02:15:37.223010+00:00"
     }
   }
 }

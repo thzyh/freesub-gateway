@@ -1,6 +1,101 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-24T20:58:52.001616+00:00",
+  "generated_at": "2026-09-25T02:15:37.707188+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "fs-96dfa291e440b1255461297e",
+      "protocol": "shadowsocks",
+      "country": "TW",
+      "exit_ip": "2001:b011:3802:ab2e:3a04:b446:2110:8e35",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt"
+      ],
+      "latency_ms": 467,
+      "speed_bps": 554345,
+      "risk_score": 6,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 6,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-25T02:15:34.406615+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-09-25T02:15:28.907726+00:00",
+      "config": {
+        "type": "shadowsocks",
+        "tag": "node",
+        "server": "36.224.141.124",
+        "server_port": 50099,
+        "method": "chacha20-ietf-poly1305",
+        "password": "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
+      }
+    },
+    {
+      "candidate_id": "fs-76a8fff9acf400d82b576a86",
+      "protocol": "vmess",
+      "country": "TW",
+      "exit_ip": "61.223.69.253",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 1232,
+      "speed_bps": 702425,
+      "risk_score": 8,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 8,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-25T02:15:37.223010+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-09-25T02:15:28.884809+00:00",
+      "config": {
+        "type": "vmess",
+        "tag": "node",
+        "server": "24864168545164.oylfmxz.cn",
+        "server_port": 443,
+        "uuid": "d90e4077-bc7e-414d-a650-70bf1baae4d6",
+        "security": "auto",
+        "tls": {
+          "enabled": true,
+          "server_name": "24864168545164.oylfmxz.cn",
+          "insecure": false
+        },
+        "transport": {
+          "type": "ws",
+          "path": "/"
+        }
+      }
+    }
+  ]
 }
