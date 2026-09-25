@@ -1,26 +1,25 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-25T16:08:17.773359+00:00",
+  "generated_at": "2026-09-25T20:56:22.360130+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-374de9104ac0519d6482e6a3",
-      "protocol": "vless",
+      "candidate_id": "fs-96dfa291e440b1255461297e",
+      "protocol": "shadowsocks",
       "country": "TW",
-      "exit_ip": "118.167.230.191",
+      "exit_ip": "2001:b011:3802:ab2e:3a04:b446:2110:8e35",
       "network_type": "residential",
       "asn": 3462,
       "isp": "Chunghwa Telecom",
       "upstream_sources": [
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+        "https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt"
       ],
-      "latency_ms": 1896,
-      "speed_bps": 935804,
-      "risk_score": 4,
+      "latency_ms": 460,
+      "speed_bps": 1174077,
+      "risk_score": 6,
       "quality": {
         "source": "ping0",
-        "risk_score": 4,
+        "risk_score": 6,
         "native_ip": true,
         "native_label": "原生 IP",
         "scenario_stars": {
@@ -29,33 +28,21 @@
           "social_media": 5,
           "ai": 5
         },
-        "checked_at": "2026-09-25T16:08:17.008116+00:00"
+        "checked_at": "2026-09-25T02:15:34.406615+00:00"
       },
       "risk_signals": {
         "fraud_score": 0,
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-09-25T16:08:07.149331+00:00",
+      "tested_at": "2026-09-25T20:56:08.874008+00:00",
       "config": {
-        "type": "vless",
+        "type": "shadowsocks",
         "tag": "node",
-        "server": "118.167.230.191",
-        "server_port": 24215,
-        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
-        "tls": {
-          "enabled": true,
-          "server_name": "addons.mozilla.org",
-          "utls": {
-            "enabled": true,
-            "fingerprint": "edge"
-          },
-          "reality": {
-            "enabled": true,
-            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
-            "short_id": ""
-          }
-        }
+        "server": "36.224.141.124",
+        "server_port": 50099,
+        "method": "chacha20-ietf-poly1305",
+        "password": "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
       }
     }
   ]

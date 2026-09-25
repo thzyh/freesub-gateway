@@ -5,14 +5,6 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇦🇹 奥地利 (Austria) 01 - xiaohe
-  server: 67.159.17.181
-  port: 30443
-  udp: true
-  type: hysteria2
-  password: 0e1506b1-22a4-4b4f-8082-9ddd2efcd28e
-  sni: filesconvert.org
-  skip-cert-verify: true
-- name: 🇦🇹 奥地利 (Austria) 02 - xiaohe
   server: 82.110.60.9
   port: 19999
   udp: true
@@ -25,13 +17,11 @@ proxy-groups:
   proxies:
   - AUTO
   - 🇦🇹 奥地利 (Austria) 01 - xiaohe
-  - 🇦🇹 奥地利 (Austria) 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🇦🇹 奥地利 (Austria) 01 - xiaohe
-  - 🇦🇹 奥地利 (Austria) 02 - xiaohe
 rules:
 - MATCH,PROXIES
