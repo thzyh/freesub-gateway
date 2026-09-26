@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T10:32:15.180750+00:00",
+  "generated_at": "2026-09-26T15:20:04.126486+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-f767b2e5e19ac9aca3aea9a6",
+      "candidate_id": "fs-3c8eb0c06b3cdcb6837a719b",
       "protocol": "vless",
       "country": "TR",
       "exit_ip": "2a01:f900:12:216::1",
@@ -12,10 +12,10 @@
       "asn": 44620,
       "isp": "Netlen Internet Hizmetleri Sti.",
       "upstream_sources": [
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+        "https://raw.githubusercontent.com/10ium/HiN-VPN/main/subscription/base64/mix"
       ],
-      "latency_ms": 1116,
-      "speed_bps": 230875,
+      "latency_ms": 675,
+      "speed_bps": 721150,
       "risk_score": 4,
       "quality": {
         "source": "ping0",
@@ -35,17 +35,17 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-09-26T10:32:02.004714+00:00",
+      "tested_at": "2026-09-26T15:19:53.901983+00:00",
       "config": {
         "type": "vless",
         "tag": "node",
-        "server": "test.keoplentuio.xyz",
+        "server": "82.47.63.156",
         "server_port": 2053,
         "uuid": "9ef61079-6f7d-4911-9608-943da85d8e6f"
       }
     },
     {
-      "candidate_id": "fs-f5b1a99106f43f7764e69a5b",
+      "candidate_id": "fs-f91beff0c908b66bc46e0cea",
       "protocol": "shadowsocks",
       "country": "TW",
       "exit_ip": "2001:b011:bc01:c8b8:c43:d52c:16ca:6ca5",
@@ -53,10 +53,11 @@
       "asn": 3462,
       "isp": "Chunghwa Telecom",
       "upstream_sources": [
-        "https://www.ermao.net/sub/v2ray/ermao.net"
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 660,
-      "speed_bps": 887366,
+      "latency_ms": 714,
+      "speed_bps": 887430,
       "risk_score": 4,
       "quality": {
         "source": "ping0",
@@ -76,56 +77,14 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-09-26T10:32:02.310972+00:00",
+      "tested_at": "2026-09-26T15:19:53.768597+00:00",
       "config": {
         "type": "shadowsocks",
         "tag": "node",
-        "server": "namrcg001640lrm.cybervena.com",
+        "server": "125.224.202.118",
         "server_port": 50099,
         "method": "chacha20-ietf-poly1305",
-        "password": "7b56aeaa-8e2d-4bdf-b1d7-233ecca15f56"
-      }
-    },
-    {
-      "candidate_id": "fs-96dfa291e440b1255461297e",
-      "protocol": "shadowsocks",
-      "country": "TW",
-      "exit_ip": "2001:b011:3802:ab2e:3a04:b446:2110:8e35",
-      "network_type": "residential",
-      "asn": 3462,
-      "isp": "Chunghwa Telecom",
-      "upstream_sources": [
-        "https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt"
-      ],
-      "latency_ms": 601,
-      "speed_bps": 921968,
-      "risk_score": 6,
-      "quality": {
-        "source": "ping0",
-        "risk_score": 6,
-        "native_ip": true,
-        "native_label": "原生 IP",
-        "scenario_stars": {
-          "tiktok": 5,
-          "cross_border_ecommerce": 5,
-          "social_media": 5,
-          "ai": 5
-        },
-        "checked_at": "2026-09-25T02:15:34.406615+00:00"
-      },
-      "risk_signals": {
-        "fraud_score": 0,
-        "ip_api_proxy": false,
-        "ip_api_hosting": false
-      },
-      "tested_at": "2026-09-26T10:32:02.316885+00:00",
-      "config": {
-        "type": "shadowsocks",
-        "tag": "node",
-        "server": "36.224.141.124",
-        "server_port": 50099,
-        "method": "chacha20-ietf-poly1305",
-        "password": "7e731ec3-f8e1-43f6-92cf-3978d14705c4"
+        "password": "a9a0d092-6f0e-4701-81ee-454643d6d506"
       }
     }
   ]
