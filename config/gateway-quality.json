@@ -351,6 +351,19 @@
         "ai": 5
       },
       "checked_at": "2026-09-26T02:23:51.426224+00:00"
+    },
+    "2a01:f900:12:216::1": {
+      "source": "ping0",
+      "risk_score": 4,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-09-26T10:32:14.699922+00:00"
     }
   }
 }

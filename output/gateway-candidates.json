@@ -1,8 +1,49 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-26T02:23:52.020902+00:00",
+  "generated_at": "2026-09-26T10:32:15.180750+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
+    {
+      "candidate_id": "fs-f767b2e5e19ac9aca3aea9a6",
+      "protocol": "vless",
+      "country": "TR",
+      "exit_ip": "2a01:f900:12:216::1",
+      "network_type": "mobile",
+      "asn": 44620,
+      "isp": "Netlen Internet Hizmetleri Sti.",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 1116,
+      "speed_bps": 230875,
+      "risk_score": 4,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 4,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-26T10:32:14.699922+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-09-26T10:32:02.004714+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "test.keoplentuio.xyz",
+        "server_port": 2053,
+        "uuid": "9ef61079-6f7d-4911-9608-943da85d8e6f"
+      }
+    },
     {
       "candidate_id": "fs-f5b1a99106f43f7764e69a5b",
       "protocol": "shadowsocks",
@@ -14,8 +55,8 @@
       "upstream_sources": [
         "https://www.ermao.net/sub/v2ray/ermao.net"
       ],
-      "latency_ms": 679,
-      "speed_bps": 994950,
+      "latency_ms": 660,
+      "speed_bps": 887366,
       "risk_score": 4,
       "quality": {
         "source": "ping0",
@@ -35,7 +76,7 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-09-26T02:23:24.801350+00:00",
+      "tested_at": "2026-09-26T10:32:02.310972+00:00",
       "config": {
         "type": "shadowsocks",
         "tag": "node",
@@ -43,61 +84,6 @@
         "server_port": 50099,
         "method": "chacha20-ietf-poly1305",
         "password": "7b56aeaa-8e2d-4bdf-b1d7-233ecca15f56"
-      }
-    },
-    {
-      "candidate_id": "fs-a0cbc8626a28ccdc9a0cf913",
-      "protocol": "vless",
-      "country": "TW",
-      "exit_ip": "118.167.230.191",
-      "network_type": "residential",
-      "asn": 3462,
-      "isp": "Chunghwa Telecom",
-      "upstream_sources": [
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
-      ],
-      "latency_ms": 1145,
-      "speed_bps": 712952,
-      "risk_score": 4,
-      "quality": {
-        "source": "ping0",
-        "risk_score": 4,
-        "native_ip": true,
-        "native_label": "原生 IP",
-        "scenario_stars": {
-          "tiktok": 5,
-          "cross_border_ecommerce": 5,
-          "social_media": 5,
-          "ai": 5
-        },
-        "checked_at": "2026-09-25T16:08:17.008116+00:00"
-      },
-      "risk_signals": {
-        "fraud_score": 0,
-        "ip_api_proxy": false,
-        "ip_api_hosting": false
-      },
-      "tested_at": "2026-09-26T02:23:13.462554+00:00",
-      "config": {
-        "type": "vless",
-        "tag": "node",
-        "server": "118.167.230.191",
-        "server_port": 24215,
-        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
-        "tls": {
-          "enabled": true,
-          "server_name": "addons.mozilla.org",
-          "utls": {
-            "enabled": true,
-            "fingerprint": "firefox"
-          },
-          "reality": {
-            "enabled": true,
-            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
-            "short_id": ""
-          }
-        }
       }
     },
     {
@@ -111,8 +97,8 @@
       "upstream_sources": [
         "https://raw.githubusercontent.com/ShatakVPN/ConfigForge-V2Ray/main/configs/all.txt"
       ],
-      "latency_ms": 561,
-      "speed_bps": 814531,
+      "latency_ms": 601,
+      "speed_bps": 921968,
       "risk_score": 6,
       "quality": {
         "source": "ping0",
@@ -132,7 +118,7 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-09-26T02:23:31.723954+00:00",
+      "tested_at": "2026-09-26T10:32:02.316885+00:00",
       "config": {
         "type": "shadowsocks",
         "tag": "node",
