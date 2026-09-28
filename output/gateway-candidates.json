@@ -1,6 +1,102 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-28T02:21:17.794207+00:00",
+  "generated_at": "2026-09-28T12:16:17.651063+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "fs-f767b2e5e19ac9aca3aea9a6",
+      "protocol": "vless",
+      "country": "TR",
+      "exit_ip": "2a01:f900:12:216::1",
+      "network_type": "mobile",
+      "asn": 44620,
+      "isp": "Netlen Internet Hizmetleri Sti.",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 1290,
+      "speed_bps": 100786,
+      "risk_score": 4,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 4,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-26T10:32:14.699922+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-09-28T12:16:14.002231+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "test.keoplentuio.xyz",
+        "server_port": 2053,
+        "uuid": "9ef61079-6f7d-4911-9608-943da85d8e6f"
+      }
+    },
+    {
+      "candidate_id": "fs-b5cf66dec2402f560b1d6a5f",
+      "protocol": "vless",
+      "country": "TW",
+      "exit_ip": "118.167.230.191",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://raw.githubusercontent.com/10ium/HiN-VPN/main/subscription/base64/mix"
+      ],
+      "latency_ms": 955,
+      "speed_bps": 691929,
+      "risk_score": 4,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 4,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-25T16:08:17.008116+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-09-28T12:16:13.084576+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "hinet1.2yly.com",
+        "server_port": 24215,
+        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
+        "tls": {
+          "enabled": true,
+          "server_name": "addons.mozilla.org",
+          "utls": {
+            "enabled": true,
+            "fingerprint": "chrome"
+          },
+          "reality": {
+            "enabled": true,
+            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
+            "short_id": ""
+          }
+        }
+      }
+    }
+  ]
 }
