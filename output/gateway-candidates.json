@@ -1,6 +1,61 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-30T11:43:34.688187+00:00",
+  "generated_at": "2026-09-30T17:15:16.808905+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "fs-b5cf66dec2402f560b1d6a5f",
+      "protocol": "vless",
+      "country": "TW",
+      "exit_ip": "118.167.207.194",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://raw.githubusercontent.com/10ium/HiN-VPN/main/subscription/base64/mix"
+      ],
+      "latency_ms": 1179,
+      "speed_bps": 730835,
+      "risk_score": 1,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 1,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-28T22:48:29.811033+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-09-30T17:14:30.468262+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "hinet1.2yly.com",
+        "server_port": 24215,
+        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
+        "tls": {
+          "enabled": true,
+          "server_name": "addons.mozilla.org",
+          "utls": {
+            "enabled": true,
+            "fingerprint": "chrome"
+          },
+          "reality": {
+            "enabled": true,
+            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
+            "short_id": ""
+          }
+        }
+      }
+    }
+  ]
 }

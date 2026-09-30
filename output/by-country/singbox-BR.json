@@ -4,28 +4,22 @@
   },
   "outbounds": [
     {
-      "type": "trojan",
-      "tag": "🇸🇨 塞舌尔 (Seychelles) 01 - xiaohe",
-      "server": "45.205.0.6",
+      "type": "vmess",
+      "tag": "🇧🇷 巴西 (Brazil) 01 - xiaohe",
+      "server": "aksai.org",
       "server_port": 443,
-      "password": "humanity",
+      "uuid": "03fcc618-b93d-6796-6aed-8a38c975d581",
+      "security": "auto",
       "tls": {
         "enabled": true,
-        "server_name": "www.calmlunch.com",
-        "insecure": false,
-        "alpn": [
-          "http/1.1"
-        ],
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
+        "server_name": "aksai.org",
+        "insecure": false
       },
       "transport": {
         "type": "ws",
-        "path": "/assignment",
+        "path": "/linkvws",
         "headers": {
-          "Host": "www.calmlunch.com"
+          "Host": "aksai.org"
         }
       }
     },
@@ -34,14 +28,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇸🇨 塞舌尔 (Seychelles) 01 - xiaohe"
+        "🇧🇷 巴西 (Brazil) 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇸🇨 塞舌尔 (Seychelles) 01 - xiaohe"
+        "🇧🇷 巴西 (Brazil) 01 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
