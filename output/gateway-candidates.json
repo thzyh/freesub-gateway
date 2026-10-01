@@ -1,8 +1,49 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-09-30T21:47:18.385517+00:00",
+  "generated_at": "2026-10-01T02:54:03.266929+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
+    {
+      "candidate_id": "fs-bc1e84fbc52a3cb44717de19",
+      "protocol": "vless",
+      "country": "TR",
+      "exit_ip": "2a01:f900:12:216::1",
+      "network_type": "mobile",
+      "asn": 44620,
+      "isp": "Netlen Internet Hizmetleri Sti.",
+      "upstream_sources": [
+        "https://raw.githubusercontent.com/10ium/HiN-VPN/main/subscription/base64/mix"
+      ],
+      "latency_ms": 1033,
+      "speed_bps": 71200,
+      "risk_score": 4,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 4,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-09-26T10:32:14.699922+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-10-01T02:53:03.512176+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "178.83.46.216",
+        "server_port": 2053,
+        "uuid": "9ef61079-6f7d-4911-9608-943da85d8e6f"
+      }
+    },
     {
       "candidate_id": "fs-b5cf66dec2402f560b1d6a5f",
       "protocol": "vless",
@@ -14,8 +55,8 @@
       "upstream_sources": [
         "https://raw.githubusercontent.com/10ium/HiN-VPN/main/subscription/base64/mix"
       ],
-      "latency_ms": 799,
-      "speed_bps": 1202807,
+      "latency_ms": 1613,
+      "speed_bps": 694884,
       "risk_score": 1,
       "quality": {
         "source": "ping0",
@@ -35,7 +76,7 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-09-30T21:44:52.906903+00:00",
+      "tested_at": "2026-10-01T02:52:40.260284+00:00",
       "config": {
         "type": "vless",
         "tag": "node",
@@ -52,6 +93,61 @@
           "reality": {
             "enabled": true,
             "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
+            "short_id": ""
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "fs-d591810435cd682be48de392",
+      "protocol": "vless",
+      "country": "TW",
+      "exit_ip": "114.37.194.138",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://www.ermao.net/sub/v2ray/ermao.net"
+      ],
+      "latency_ms": 1839,
+      "speed_bps": 1054169,
+      "risk_score": 6,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 6,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-10-01T02:54:02.674715+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-10-01T02:53:10.530842+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "x-tw01.xueshan168.cc",
+        "server_port": 16000,
+        "uuid": "cf20ac54-9c77-4fec-b2b6-bcf8223aa4d5",
+        "flow": "xtls-rprx-vision",
+        "tls": {
+          "enabled": true,
+          "server_name": "s0.awsstatic.com",
+          "utls": {
+            "enabled": true,
+            "fingerprint": "chrome"
+          },
+          "reality": {
+            "enabled": true,
+            "public_key": "CuqzBeQR_1VIdOGOgn5v8-t-X-YzURF9b3wtKVVyKQ8",
             "short_id": ""
           }
         }
