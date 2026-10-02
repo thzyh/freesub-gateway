@@ -1,10 +1,64 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-01T22:12:15.853413+00:00",
+  "generated_at": "2026-10-02T02:57:36.851179+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-7e71ecbec1721434fcc6c8fd",
+      "candidate_id": "fs-b5cf66dec2402f560b1d6a5f",
+      "protocol": "vless",
+      "country": "TW",
+      "exit_ip": "118.167.235.241",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://raw.githubusercontent.com/10ium/HiN-VPN/main/subscription/base64/mix"
+      ],
+      "latency_ms": 1078,
+      "speed_bps": 790517,
+      "risk_score": 8,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 8,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-10-02T02:57:36.169422+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-10-02T02:57:01.213867+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "hinet1.2yly.com",
+        "server_port": 24215,
+        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
+        "tls": {
+          "enabled": true,
+          "server_name": "addons.mozilla.org",
+          "utls": {
+            "enabled": true,
+            "fingerprint": "chrome"
+          },
+          "reality": {
+            "enabled": true,
+            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
+            "short_id": ""
+          }
+        }
+      }
+    },
+    {
+      "candidate_id": "fs-a992c147afcae5a893750430",
       "protocol": "vmess",
       "country": "TW",
       "exit_ip": "1.162.189.4",
@@ -15,8 +69,8 @@
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 1199,
-      "speed_bps": 429497,
+      "latency_ms": 2266,
+      "speed_bps": 457250,
       "risk_score": 10,
       "quality": {
         "source": "ping0",
@@ -36,7 +90,7 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-01T22:11:44.179802+00:00",
+      "tested_at": "2026-10-02T02:56:40.520641+00:00",
       "config": {
         "type": "vmess",
         "tag": "node",
@@ -46,7 +100,10 @@
         "security": "auto",
         "transport": {
           "type": "ws",
-          "path": "/video"
+          "path": "/video",
+          "headers": {
+            "Host": "hi.northcluster.info"
+          }
         }
       }
     }
