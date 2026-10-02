@@ -29,7 +29,7 @@ proxies:
   servername: www.cloudflare.com
   client-fingerprint: firefox
 - name: 🇮🇩 印尼 (Indonesia) 03 - xiaohe
-  server: 188.114.97.6
+  server: 104.18.32.87
   port: 443
   udp: true
   type: trojan
