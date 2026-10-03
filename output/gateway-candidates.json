@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-02T21:42:46.808939+00:00",
+  "generated_at": "2026-10-03T02:45:44.791510+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-f767b2e5e19ac9aca3aea9a6",
+      "candidate_id": "fs-bc1e84fbc52a3cb44717de19",
       "protocol": "vless",
       "country": "TR",
       "exit_ip": "2a01:f900:12:216::1",
@@ -14,8 +14,8 @@
       "upstream_sources": [
         "https://www.ermao.net/sub/v2ray/ermao.net"
       ],
-      "latency_ms": 5375,
-      "speed_bps": 123907,
+      "latency_ms": 501,
+      "speed_bps": 297337,
       "risk_score": 4,
       "quality": {
         "source": "ping0",
@@ -35,17 +35,17 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-02T21:41:00.255382+00:00",
+      "tested_at": "2026-10-03T02:44:32.692353+00:00",
       "config": {
         "type": "vless",
         "tag": "node",
-        "server": "test.keoplentuio.xyz",
+        "server": "178.83.46.216",
         "server_port": 2053,
         "uuid": "9ef61079-6f7d-4911-9608-943da85d8e6f"
       }
     },
     {
-      "candidate_id": "fs-b59bf71dd1ede59c42801fc3",
+      "candidate_id": "fs-59d50b959274af275eed43f9",
       "protocol": "vless",
       "country": "TW",
       "exit_ip": "118.167.235.241",
@@ -56,8 +56,8 @@
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 642,
-      "speed_bps": 1252914,
+      "latency_ms": 911,
+      "speed_bps": 869084,
       "risk_score": 8,
       "quality": {
         "source": "ping0",
@@ -77,7 +77,7 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-02T21:41:31.969260+00:00",
+      "tested_at": "2026-10-03T02:44:21.445443+00:00",
       "config": {
         "type": "vless",
         "tag": "node",
@@ -89,7 +89,7 @@
           "server_name": "addons.mozilla.org",
           "utls": {
             "enabled": true,
-            "fingerprint": "random"
+            "fingerprint": "firefox"
           },
           "reality": {
             "enabled": true,

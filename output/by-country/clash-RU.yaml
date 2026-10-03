@@ -5,7 +5,15 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇷🇺 俄罗斯 (Russia) 01 - xiaohe
-  server: 194.113.235.66
+  server: 91.240.86.70
+  port: 22443
+  udp: true
+  type: hysteria2
+  password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
+  sni: 91.240.86.70
+  skip-cert-verify: true
+- name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
+  server: 81.177.215.175
   port: 443
   udp: true
   type: vless
@@ -16,15 +24,7 @@ proxies:
     public-key: lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q
     short-id: 9e4eced6e98ed4d4
   servername: github.com
-  client-fingerprint: chrome
-- name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  server: 91.240.86.70
-  port: 22443
-  udp: true
-  type: hysteria2
-  password: 3f63c86c-ac4a-4900-85cf-4fedf93c2ca5
-  sni: 91.240.86.70
-  skip-cert-verify: true
+  client-fingerprint: firefox
 - name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
   server: 31.76.34.216
   port: 443
@@ -38,20 +38,7 @@ proxies:
   servername: ru-c-1.minzt.su
   client-fingerprint: chrome
 - name: 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
-  server: 81.177.215.175
-  port: 443
-  udp: true
-  type: vless
-  uuid: 1c5ed2e1-56da-41ab-9a78-159d9892ec17
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: lHCkAu_DOVFtE-iL2JGrPt44QeTCFijXuRfuGaSni3Q
-    short-id: 9e4eced6e98ed4d4
-  servername: github.com
-  client-fingerprint: firefox
-- name: 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
-  server: 46.243.232.125
+  server: 78.159.246.110
   port: 443
   udp: true
   type: vless
@@ -65,6 +52,18 @@ proxies:
     path: /ws
     headers:
       Host: fbsv6.guardora.pro
+- name: 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
+  server: 45.12.75.242
+  port: 26424
+  udp: true
+  type: vless
+  uuid: 633f424e-2b11-48da-a6b3-a849dd71456f
+  tls: true
+  reality-opts:
+    public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
+    short-id: 23103e1e
+  servername: ya.ru
+  client-fingerprint: chrome
 proxy-groups:
 - name: PROXIES
   type: select
