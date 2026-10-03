@@ -263,16 +263,16 @@
     },
     "112.120.221.250": {
       "source": "ping0",
-      "risk_score": 10,
+      "risk_score": 75,
       "native_ip": true,
       "native_label": "原生 IP",
       "scenario_stars": {
-        "tiktok": 3,
-        "cross_border_ecommerce": 3,
-        "social_media": 3,
+        "tiktok": 1,
+        "cross_border_ecommerce": 1,
+        "social_media": 1,
         "ai": 1
       },
-      "checked_at": "2026-09-25T02:15:34.973966+00:00"
+      "checked_at": "2026-10-03T10:56:21.646079+00:00"
     },
     "209.9.201.153": {
       "source": "ping0",
