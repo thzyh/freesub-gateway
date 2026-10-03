@@ -5,20 +5,16 @@ mode: rule
 log-level: info
 proxies:
 - name: 🌐 其他地区 (Other) 01 - xiaohe
-  server: 104.21.13.77
+  server: 104.16.71.213
   port: 443
   udp: true
-  type: vless
-  uuid: 4b21fbc7-00c2-4665-9788-02153832f9e5
-  tls: true
-  servername: v2ray.aizgl.com
+  type: trojan
+  password: humanity
+  sni: www.calmlunch.com
   skip-cert-verify: false
-  client-fingerprint: chrome
   network: ws
   ws-opts:
-    path: /xray-ws
-    headers:
-      Host: v2ray.aizgl.com
+    path: /assignment
 proxy-groups:
 - name: PROXIES
   type: select

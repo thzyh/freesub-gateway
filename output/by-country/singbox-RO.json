@@ -12,7 +12,7 @@
       "tls": {
         "enabled": true,
         "server_name": "grape-test-italy.dynuddns.net",
-        "insecure": true
+        "insecure": false
       }
     },
     {
@@ -74,18 +74,6 @@
       }
     },
     {
-      "type": "trojan",
-      "tag": "🇷🇴 罗马尼亚 (Romania) 05 - xiaohe",
-      "server": "38.180.35.145",
-      "server_port": 443,
-      "password": "600421cf-11d7-429f-a65b-c30397f1bc03",
-      "tls": {
-        "enabled": true,
-        "server_name": "bu2.freeguard.org",
-        "insecure": false
-      }
-    },
-    {
       "type": "selector",
       "tag": "select",
       "outbounds": [
@@ -93,8 +81,7 @@
         "🇷🇴 罗马尼亚 (Romania) 01 - xiaohe",
         "🇷🇴 罗马尼亚 (Romania) 02 - xiaohe",
         "🇷🇴 罗马尼亚 (Romania) 03 - xiaohe",
-        "🇷🇴 罗马尼亚 (Romania) 04 - xiaohe",
-        "🇷🇴 罗马尼亚 (Romania) 05 - xiaohe"
+        "🇷🇴 罗马尼亚 (Romania) 04 - xiaohe"
       ]
     },
     {
@@ -104,8 +91,7 @@
         "🇷🇴 罗马尼亚 (Romania) 01 - xiaohe",
         "🇷🇴 罗马尼亚 (Romania) 02 - xiaohe",
         "🇷🇴 罗马尼亚 (Romania) 03 - xiaohe",
-        "🇷🇴 罗马尼亚 (Romania) 04 - xiaohe",
-        "🇷🇴 罗马尼亚 (Romania) 05 - xiaohe"
+        "🇷🇴 罗马尼亚 (Romania) 04 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
