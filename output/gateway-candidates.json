@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-04T03:21:12.129709+00:00",
+  "generated_at": "2026-10-04T11:34:10.417851+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-59d50b959274af275eed43f9",
+      "candidate_id": "fs-b5cf66dec2402f560b1d6a5f",
       "protocol": "vless",
       "country": "TW",
       "exit_ip": "118.167.235.241",
@@ -12,11 +12,10 @@
       "asn": 3462,
       "isp": "Chunghwa Telecom",
       "upstream_sources": [
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+        "https://raw.githubusercontent.com/10ium/HiN-VPN/main/subscription/base64/mix"
       ],
-      "latency_ms": 3078,
-      "speed_bps": 691041,
+      "latency_ms": 5071,
+      "speed_bps": 692519,
       "risk_score": 8,
       "quality": {
         "source": "ping0",
@@ -36,11 +35,11 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-04T03:20:40.804760+00:00",
+      "tested_at": "2026-10-04T11:33:34.092615+00:00",
       "config": {
         "type": "vless",
         "tag": "node",
-        "server": "118.167.235.241",
+        "server": "hinet1.2yly.com",
         "server_port": 24215,
         "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
         "tls": {
@@ -48,7 +47,7 @@
           "server_name": "addons.mozilla.org",
           "utls": {
             "enabled": true,
-            "fingerprint": "firefox"
+            "fingerprint": "chrome"
           },
           "reality": {
             "enabled": true,
