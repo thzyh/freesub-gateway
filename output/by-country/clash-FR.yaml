@@ -5,20 +5,18 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇫🇷 法国 (France) 01 - xiaohe
-  server: 52.47.133.105
+  server: 143.246.208.113
   port: 443
   udp: true
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+  type: vless
+  uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
+  tls: true
+  servername: assets-fr4.pleiades.codes
+  skip-cert-verify: false
+  network: grpc
+  grpc-opts:
+    grpc-service-name: cdn.v1.AssetService
 - name: 🇫🇷 法国 (France) 02 - xiaohe
-  server: 51.255.13.232
-  port: 8388
-  udp: true
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: BqnqToih0PbU
-- name: 🇫🇷 法国 (France) 03 - xiaohe
   server: 62.210.91.10
   port: 23576
   udp: true
@@ -31,7 +29,7 @@ proxies:
     short-id: '01'
   servername: fuck.rkn
   client-fingerprint: chrome
-- name: 🇫🇷 法国 (France) 04 - xiaohe
+- name: 🇫🇷 法国 (France) 03 - xiaohe
   server: 62.210.91.2
   port: 23576
   udp: true
@@ -43,28 +41,8 @@ proxies:
     public-key: 1y5h2FGWKXTJ9xLPCqPo6Mw7RxoZzh6fGkEQKNxpZ3s
     short-id: '01'
   servername: fuck.rkn
-  client-fingerprint: ''
-- name: 🇫🇷 法国 (France) 05 - xiaohe
-  server: 35.181.166.40
-  port: 443
-  udp: true
-  type: hysteria2
-  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
-  sni: vpn-fr-002.fastervpn.world
-  skip-cert-verify: true
-- name: 🇫🇷 法国 (France) 06 - xiaohe
-  server: 143.246.208.113
-  port: 443
-  udp: true
-  type: vless
-  uuid: 0dca2cfe-98eb-4f9d-9a47-cf87510c558b
-  tls: true
-  servername: assets-fr4.pleiades.codes
-  skip-cert-verify: false
-  network: grpc
-  grpc-opts:
-    grpc-service-name: cdn.v1.AssetService
-- name: 🇫🇷 法国 (France) 07 - xiaohe
+  client-fingerprint: chrome
+- name: 🇫🇷 法国 (France) 04 - xiaohe
   server: 62.210.124.146
   port: 22000
   udp: true
@@ -72,15 +50,7 @@ proxies:
   password: dongtaiwang.com
   sni: www.microsoft.com
   skip-cert-verify: true
-- name: 🇫🇷 法国 (France) 08 - xiaohe
-  server: 62.210.7.139
-  port: 60111
-  udp: true
-  type: hysteria2
-  password: github.com/Alvin9999-newpac/fanqiang
-  sni: 62.210.7.139
-  skip-cert-verify: true
-- name: 🇫🇷 法国 (France) 09 - xiaohe
+- name: 🇫🇷 法国 (France) 05 - xiaohe
   server: 152.228.139.33
   port: 51671
   udp: true
@@ -95,32 +65,22 @@ proxies:
   network: grpc
   grpc-opts:
     grpc-service-name: grpc_common3
-- name: 🇫🇷 法国 (France) 10 - xiaohe
-  server: 54.37.136.194
-  port: 2053
+- name: 🇫🇷 法国 (France) 06 - xiaohe
+  server: 51.255.13.232
+  port: 8388
   udp: true
-  type: vless
-  uuid: e8a432c8-5d84-49a5-b822-67ed761a58f9
-  tls: true
-  reality-opts:
-    public-key: Vemd9Jjk5xKO8qSC3g8VVagwcb4J1BcTvp86CswQC0A
-    short-id: 50ba05992b05c1c3
-  servername: www.cloudflare.com
-  client-fingerprint: chrome
-- name: 🇫🇷 法国 (France) 11 - xiaohe
-  server: 137.74.16.237
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: BqnqToih0PbU
+- name: 🇫🇷 法国 (France) 07 - xiaohe
+  server: vpn-fr-002.fastervpn.world
   port: 443
   udp: true
-  type: vless
-  uuid: aaec4e42-a095-44b6-a239-f16d234a0798
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: 7LSzvilTVKGMtBDuKGeMrLtlhY7tQf5YcG566dEgO0I
-    short-id: b390e0a721d242b0
-  servername: www.icloud.com
-  client-fingerprint: chrome
-- name: 🇫🇷 法国 (France) 12 - xiaohe
+  type: hysteria2
+  password: H7mP2xY9kJ4nQ8wR5tF6vB3z
+  sni: vpn-fr-002.fastervpn.world
+  skip-cert-verify: true
+- name: 🇫🇷 法国 (France) 08 - xiaohe
   server: 152.228.139.33
   port: 35108
   udp: true
@@ -135,6 +95,27 @@ proxies:
   network: grpc
   grpc-opts:
     grpc-service-name: grpc-common3
+- name: 🇫🇷 法国 (France) 09 - xiaohe
+  server: 57.131.21.102
+  port: 8443
+  udp: true
+  type: vless
+  uuid: 69ac162b-1643-4acb-9f49-09d8b0fad609
+  tls: true
+  servername: milan.adaspoloandco.com
+  skip-cert-verify: false
+  network: ws
+  ws-opts:
+    path: /RoBeRt
+    headers:
+      Host: milan.adaspoloandco.com
+- name: 🇫🇷 法国 (France) 10 - xiaohe
+  server: 52.47.133.105
+  port: 443
+  udp: true
+  type: ss
+  cipher: aes-256-cfb
+  password: amazonskr05
 proxy-groups:
 - name: PROXIES
   type: select
@@ -150,8 +131,6 @@ proxy-groups:
   - 🇫🇷 法国 (France) 08 - xiaohe
   - 🇫🇷 法国 (France) 09 - xiaohe
   - 🇫🇷 法国 (France) 10 - xiaohe
-  - 🇫🇷 法国 (France) 11 - xiaohe
-  - 🇫🇷 法国 (France) 12 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -167,7 +146,5 @@ proxy-groups:
   - 🇫🇷 法国 (France) 08 - xiaohe
   - 🇫🇷 法国 (France) 09 - xiaohe
   - 🇫🇷 法国 (France) 10 - xiaohe
-  - 🇫🇷 法国 (France) 11 - xiaohe
-  - 🇫🇷 法国 (France) 12 - xiaohe
 rules:
 - MATCH,PROXIES

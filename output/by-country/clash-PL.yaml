@@ -24,17 +24,6 @@ proxies:
   skip-cert-verify: false
   client-fingerprint: firefox
 - name: 🇵🇱 波兰 (Poland) 03 - xiaohe
-  server: 50.7.249.98
-  port: 443
-  udp: true
-  type: vless
-  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
-  flow: xtls-rprx-vision
-  tls: true
-  servername: pol-pol-poland.failspace.top
-  skip-cert-verify: false
-  client-fingerprint: firefox
-- name: 🇵🇱 波兰 (Poland) 04 - xiaohe
   server: 50.7.249.155
   port: 443
   udp: true
@@ -45,7 +34,31 @@ proxies:
   servername: poland-good.failspace.top
   skip-cert-verify: false
   client-fingerprint: firefox
+- name: 🇵🇱 波兰 (Poland) 04 - xiaohe
+  server: 50.7.249.98
+  port: 443
+  udp: true
+  type: vless
+  uuid: cd3bb7d9-7df3-4644-ac05-c260990ac277
+  flow: xtls-rprx-vision
+  tls: true
+  servername: pol-pol-poland.failspace.top
+  skip-cert-verify: false
+  client-fingerprint: firefox
 - name: 🇵🇱 波兰 (Poland) 05 - xiaohe
+  server: 83.168.107.220
+  port: 443
+  udp: true
+  type: vless
+  uuid: b1813cbd-831f-4cb3-baf8-5bc0cc8298bc
+  flow: xtls-rprx-vision
+  tls: true
+  reality-opts:
+    public-key: s0lbZ5BO3ctZjE8DzsXkNL0NvLl6FgLG6532NQzXigo
+    short-id: c56d4f1c
+  servername: google.com
+  client-fingerprint: safari
+- name: 🇵🇱 波兰 (Poland) 06 - xiaohe
   server: 188.114.96.19
   port: 80
   udp: true
@@ -68,6 +81,7 @@ proxy-groups:
   - 🇵🇱 波兰 (Poland) 03 - xiaohe
   - 🇵🇱 波兰 (Poland) 04 - xiaohe
   - 🇵🇱 波兰 (Poland) 05 - xiaohe
+  - 🇵🇱 波兰 (Poland) 06 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -78,5 +92,6 @@ proxy-groups:
   - 🇵🇱 波兰 (Poland) 03 - xiaohe
   - 🇵🇱 波兰 (Poland) 04 - xiaohe
   - 🇵🇱 波兰 (Poland) 05 - xiaohe
+  - 🇵🇱 波兰 (Poland) 06 - xiaohe
 rules:
 - MATCH,PROXIES
