@@ -1,6 +1,62 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-03T20:30:10.100281+00:00",
+  "generated_at": "2026-10-04T03:21:12.129709+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "fs-59d50b959274af275eed43f9",
+      "protocol": "vless",
+      "country": "TW",
+      "exit_ip": "118.167.235.241",
+      "network_type": "residential",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 3078,
+      "speed_bps": 691041,
+      "risk_score": 8,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 8,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-10-02T02:57:36.169422+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-10-04T03:20:40.804760+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "118.167.235.241",
+        "server_port": 24215,
+        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
+        "tls": {
+          "enabled": true,
+          "server_name": "addons.mozilla.org",
+          "utls": {
+            "enabled": true,
+            "fingerprint": "firefox"
+          },
+          "reality": {
+            "enabled": true,
+            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
+            "short_id": ""
+          }
+        }
+      }
+    }
+  ]
 }

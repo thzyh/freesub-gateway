@@ -259,7 +259,7 @@
         "social_media": 3,
         "ai": 1
       },
-      "checked_at": "2026-09-25T02:15:35.035511+00:00"
+      "checked_at": "2026-10-04T03:21:11.188715+00:00"
     },
     "112.120.221.250": {
       "source": "ping0",
@@ -416,6 +416,19 @@
         "ai": 5
       },
       "checked_at": "2026-10-02T02:57:36.169422+00:00"
+    },
+    "60.249.28.58": {
+      "source": "ping0",
+      "risk_score": 22,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-10-04T03:21:10.747347+00:00"
     }
   }
 }
