@@ -429,6 +429,19 @@
         "ai": 5
       },
       "checked_at": "2026-10-04T03:21:10.747347+00:00"
+    },
+    "202.156.27.133": {
+      "source": "ping0",
+      "risk_score": 10,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-10-05T13:01:07.073630+00:00"
     }
   }
 }
