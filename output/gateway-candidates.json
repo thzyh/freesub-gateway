@@ -1,6 +1,48 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T13:01:07.451221+00:00",
+  "generated_at": "2026-10-05T23:32:23.597243+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "fs-f767b2e5e19ac9aca3aea9a6",
+      "protocol": "vless",
+      "country": "TR",
+      "exit_ip": "2a01:f900:12:216::1",
+      "network_type": "mobile",
+      "asn": 44620,
+      "isp": "Netlen Internet Hizmetleri Sti.",
+      "upstream_sources": [
+        "https://www.ermao.net/sub/v2ray/ermao.net"
+      ],
+      "latency_ms": 787,
+      "speed_bps": 157811,
+      "risk_score": 4,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 4,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 4,
+          "social_media": 5,
+          "ai": 4
+        },
+        "checked_at": "2026-10-05T02:47:36.766426+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-10-05T23:32:14.877354+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "test.keoplentuio.xyz",
+        "server_port": 2053,
+        "uuid": "9ef61079-6f7d-4911-9608-943da85d8e6f"
+      }
+    }
+  ]
 }
