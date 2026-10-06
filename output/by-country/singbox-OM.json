@@ -5,25 +5,25 @@
   "outbounds": [
     {
       "type": "shadowsocks",
-      "tag": "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe",
-      "server": "49.254.204.133",
-      "server_port": 1774,
-      "method": "aes-256-cfb",
-      "password": "1234!@#$"
+      "tag": "🇴🇲 OM 01 - xiaohe",
+      "server": "w7k2mf.5tencent.asia",
+      "server_port": 35016,
+      "method": "aes-128-gcm",
+      "password": "6ee847c4-04ef-4786-9720-eb6f73fbd80b"
     },
     {
       "type": "selector",
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe"
+        "🇴🇲 OM 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe"
+        "🇴🇲 OM 01 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
