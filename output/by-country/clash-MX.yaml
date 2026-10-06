@@ -4,28 +4,25 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇺🇦 乌克兰 (Ukraine) 01 - xiaohe
-  server: 167.82.76.27
-  port: 443
+- name: 🇲🇽 墨西哥 (Mexico) 01 - xiaohe
+  server: 211.20.156.191
+  port: 28121
   udp: true
   type: trojan
-  password: mitivpn
-  sni: ssl.fastly.com
-  skip-cert-verify: false
-  network: ws
-  ws-opts:
-    path: /
+  password: i99Cef
+  sni: ctldl.windowsupdate.com
+  skip-cert-verify: true
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇺🇦 乌克兰 (Ukraine) 01 - xiaohe
+  - 🇲🇽 墨西哥 (Mexico) 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇺🇦 乌克兰 (Ukraine) 01 - xiaohe
+  - 🇲🇽 墨西哥 (Mexico) 01 - xiaohe
 rules:
 - MATCH,PROXIES

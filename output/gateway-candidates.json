@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-05T23:32:23.597243+00:00",
+  "generated_at": "2026-10-06T03:39:44.610031+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
@@ -12,10 +12,10 @@
       "asn": 44620,
       "isp": "Netlen Internet Hizmetleri Sti.",
       "upstream_sources": [
-        "https://www.ermao.net/sub/v2ray/ermao.net"
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 787,
-      "speed_bps": 157811,
+      "latency_ms": 838,
+      "speed_bps": 1894024,
       "risk_score": 4,
       "quality": {
         "source": "ping0",
@@ -35,7 +35,7 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-05T23:32:14.877354+00:00",
+      "tested_at": "2026-10-06T03:39:33.547686+00:00",
       "config": {
         "type": "vless",
         "tag": "node",
