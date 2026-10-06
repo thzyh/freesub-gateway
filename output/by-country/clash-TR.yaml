@@ -5,13 +5,18 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇹🇷 土耳其 (Turkey) 01 - xiaohe
-  server: test.keoplentuio.xyz
-  port: 2053
+  server: cookie.wookshop.ir
+  port: 43233
   udp: true
   type: vless
-  uuid: 9ef61079-6f7d-4911-9608-943da85d8e6f
+  uuid: 568bcbbc-7a90-4164-8b5d-1c0bbeccfa38
+  network: ws
+  ws-opts:
+    path: /
+    headers:
+      Host: cookie.wookshop.ir
 - name: 🇹🇷 土耳其 (Turkey) 02 - xiaohe
-  server: 172.67.176.3
+  server: nimm.mpd.cc.cd
   port: 2053
   udp: true
   type: trojan
