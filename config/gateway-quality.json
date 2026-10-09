@@ -442,6 +442,32 @@
         "ai": 5
       },
       "checked_at": "2026-10-05T13:01:07.073630+00:00"
+    },
+    "61.18.134.10": {
+      "source": "ping0",
+      "risk_score": 18,
+      "native_ip": false,
+      "native_label": "广播 IP",
+      "scenario_stars": {
+        "tiktok": 1,
+        "cross_border_ecommerce": 1,
+        "social_media": 1,
+        "ai": 3
+      },
+      "checked_at": "2026-10-09T22:02:59.040080+00:00"
+    },
+    "42.200.173.5": {
+      "source": "ping0",
+      "risk_score": 19,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 3,
+        "cross_border_ecommerce": 3,
+        "social_media": 3,
+        "ai": 1
+      },
+      "checked_at": "2026-10-09T22:02:59.367318+00:00"
     }
   }
 }

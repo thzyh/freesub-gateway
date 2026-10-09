@@ -30,6 +30,13 @@ proxies:
   servername: www.cloudflare.com
   client-fingerprint: chrome
 - name: 🇪🇸 西班牙 (Spain) 03 - xiaohe
+  server: 108.181.121.226
+  port: 8388
+  udp: true
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: WSyL4XTwNsdv
+- name: 🇪🇸 西班牙 (Spain) 04 - xiaohe
   server: 83.147.18.3
   port: 443
   udp: true
@@ -42,21 +49,6 @@ proxies:
     short-id: fd8cf7e1173f0edb
   servername: www.cloudflare.com
   client-fingerprint: chrome
-- name: 🇪🇸 西班牙 (Spain) 04 - xiaohe
-  server: 185.220.249.44
-  port: 2053
-  udp: true
-  type: vless
-  uuid: 6d1590ed-4c0f-4bbc-931d-2431737615dd
-  tls: true
-  servername: 185.220.249.44
-  skip-cert-verify: false
-  client-fingerprint: random
-  network: ws
-  ws-opts:
-    path: /ws-cdn1-vless
-    headers:
-      Host: es.fastmirror-labs.xyz
 proxy-groups:
 - name: PROXIES
   type: select
