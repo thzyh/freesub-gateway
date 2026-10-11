@@ -24,7 +24,7 @@
       "tls": {
         "enabled": true,
         "server_name": "adapting-basilisk.rooster465.autos",
-        "insecure": true
+        "insecure": false
       }
     },
     {
