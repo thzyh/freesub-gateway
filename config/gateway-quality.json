@@ -468,6 +468,19 @@
         "ai": 1
       },
       "checked_at": "2026-10-09T22:02:59.367318+00:00"
+    },
+    "118.166.194.164": {
+      "source": "ping0",
+      "risk_score": 60,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 1,
+        "cross_border_ecommerce": 1,
+        "social_media": 1,
+        "ai": 1
+      },
+      "checked_at": "2026-10-11T02:36:09.418380+00:00"
     }
   }
 }
