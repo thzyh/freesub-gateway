@@ -13,7 +13,11 @@
       "tls": {
         "enabled": true,
         "server_name": "co-pl.speedtec.ru",
-        "insecure": false
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "random"
+        }
       }
     },
     {
