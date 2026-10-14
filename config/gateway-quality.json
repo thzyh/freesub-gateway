@@ -520,6 +520,19 @@
         "ai": 1
       },
       "checked_at": "2026-10-12T03:02:11.210061+00:00"
+    },
+    "218.237.185.234": {
+      "source": "ping0",
+      "risk_score": 6,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-10-14T02:29:33.221153+00:00"
     }
   }
 }
