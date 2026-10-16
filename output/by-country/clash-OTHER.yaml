@@ -5,16 +5,21 @@ mode: rule
 log-level: info
 proxies:
 - name: 🌐 其他地区 (Other) 01 - xiaohe
-  server: uwu.blueknightnet.qzz.io
-  port: 2052
+  server: www.shopify.com
+  port: 443
   udp: true
-  type: vless
-  uuid: aa5d861a-7799-41a7-bdf4-7a6414cf98fd
+  type: vmess
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
+  alterId: 0
+  cipher: auto
+  tls: true
+  servername: guanwang.awsno.com
+  skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /@BlueKnight_net--@BlueKnight_net
+    path: /hls/cctv5phd.m3u8
     headers:
-      Host: uwu.blueknightnet.qzz.io
+      Host: guanwang.awsno.com
 proxy-groups:
 - name: PROXIES
   type: select

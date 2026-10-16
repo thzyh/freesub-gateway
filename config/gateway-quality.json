@@ -559,6 +559,19 @@
         "ai": 5
       },
       "checked_at": "2026-10-15T20:45:48.381932+00:00"
+    },
+    "43.230.99.117": {
+      "source": "ping0",
+      "risk_score": 18,
+      "native_ip": false,
+      "native_label": "广播 IP",
+      "scenario_stars": {
+        "tiktok": 1,
+        "cross_border_ecommerce": 1,
+        "social_media": 1,
+        "ai": 3
+      },
+      "checked_at": "2026-10-16T02:03:04.746089+00:00"
     }
   }
 }
