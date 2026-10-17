@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-17T01:57:41.861995+00:00",
+  "generated_at": "2026-10-17T09:57:03.407009+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-723342fb465ee321522aa02e",
+      "candidate_id": "fs-9b04a095f1f3bacbac50cca1",
       "protocol": "vless",
       "country": "TW",
       "exit_ip": "118.167.219.24",
@@ -15,8 +15,8 @@
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 934,
-      "speed_bps": 544301,
+      "latency_ms": 2385,
+      "speed_bps": 517306,
       "risk_score": 6,
       "quality": {
         "source": "ping0",
@@ -36,11 +36,11 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-17T01:57:09.576375+00:00",
+      "tested_at": "2026-10-17T09:56:42.492696+00:00",
       "config": {
         "type": "vless",
         "tag": "node",
-        "server": "hinet1.2yly.com",
+        "server": "118.167.219.24",
         "server_port": 24215,
         "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
         "tls": {
@@ -48,7 +48,7 @@
           "server_name": "addons.mozilla.org",
           "utls": {
             "enabled": true,
-            "fingerprint": "safari"
+            "fingerprint": "firefox"
           },
           "reality": {
             "enabled": true,
