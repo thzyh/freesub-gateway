@@ -1,21 +1,22 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-18T02:03:12.620619+00:00",
+  "generated_at": "2026-10-18T10:13:30.452656+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-641d11bf80ae80dc37ded85c",
-      "protocol": "shadowsocks",
-      "country": "KR",
-      "exit_ip": "218.237.185.234",
+      "candidate_id": "fs-8b39f2193a841381c150bbc1",
+      "protocol": "vless",
+      "country": "TW",
+      "exit_ip": "118.167.219.24",
       "network_type": "residential",
-      "asn": 9318,
-      "isp": "SK Broadband",
+      "asn": 3462,
+      "isp": "Chunghwa Telecom",
       "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 841,
-      "speed_bps": 900703,
+      "latency_ms": 894,
+      "speed_bps": 555731,
       "risk_score": 6,
       "quality": {
         "source": "ping0",
@@ -28,21 +29,33 @@
           "social_media": 5,
           "ai": 5
         },
-        "checked_at": "2026-10-14T02:29:33.221153+00:00"
+        "checked_at": "2026-10-15T20:45:48.381932+00:00"
       },
       "risk_signals": {
-        "fraud_score": 1,
+        "fraud_score": 0,
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-18T01:59:50.110464+00:00",
+      "tested_at": "2026-10-18T10:11:51.666355+00:00",
       "config": {
-        "type": "shadowsocks",
+        "type": "vless",
         "tag": "node",
-        "server": "p141.panda001.net",
-        "server_port": 4652,
-        "method": "aes-256-cfb",
-        "password": "qwerREWQ@@"
+        "server": "hinet1.2yly.com",
+        "server_port": 24215,
+        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
+        "tls": {
+          "enabled": true,
+          "server_name": "addons.mozilla.org",
+          "utls": {
+            "enabled": true,
+            "fingerprint": "qq"
+          },
+          "reality": {
+            "enabled": true,
+            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
+            "short_id": ""
+          }
+        }
       }
     }
   ]
