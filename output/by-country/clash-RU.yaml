@@ -15,37 +15,42 @@ proxies:
     public-key: XlEzAhUOUC-hZA2Uk2sctG5WR9lPeAUAHGNQVu9oAVg
     short-id: ce1dc482
   servername: www.cloudflare.com
-  client-fingerprint: ios
+  client-fingerprint: chrome
 - name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
-  server: 194.38.11.86
-  port: 65443
-  udp: true
-  type: ss
-  cipher: aes-256-cfb
-  password: 7eadc6dbe2ae
-- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
-  server: 176.32.32.108
-  port: 18443
-  udp: true
-  type: ss
-  cipher: aes-256-gcm
-  password: cCMJgJTA3BA489YUYrFq7XHXSiSpWlLa
-- name: 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
-  server: 130.49.189.158
-  port: 43558
-  udp: true
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: MYkM/b5ww6KhyHjBKB6OZifqzcXEnDT2jDIBWywYAws=
-- name: 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
   server: 194.87.196.107
   port: 18443
   udp: true
   type: ss
   cipher: aes-256-gcm
   password: Lpq5UPVHtQYiuB9jEUNc2WkeIYCUH9DE
+- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
+  server: 130.49.189.158
+  port: 43558
+  udp: true
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: MYkM/b5ww6KhyHjBKB6OZifqzcXEnDT2jDIBWywYAws=
+- name: 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
+  server: yt.noooo.win
+  port: 8443
+  udp: true
+  type: vless
+  uuid: b3441cc7-1e5f-4eb6-8207-90788eeca21e
+  flow: xtls-rprx-vision
+  tls: true
+  servername: dsapi-v2-6ad3c751.adhil.uk
+  skip-cert-verify: false
+  client-fingerprint: chrome
+- name: 🇷🇺 俄罗斯 (Russia) 05 - xiaohe
+  server: 194.87.118.184
+  port: 2053
+  udp: true
+  type: hysteria2
+  password: 7ab3c77e-8fcc-4848-918f-cae3d4eac794
+  sni: 'off'
+  skip-cert-verify: true
 - name: 🇷🇺 俄罗斯 (Russia) 06 - xiaohe
-  server: 168.113.135.90
+  server: m-vruvc.mvpstr.com
   port: 443
   udp: true
   type: vless
@@ -58,72 +63,7 @@ proxies:
   servername: m-vruvc.mvpstr.com
   client-fingerprint: chrome
 - name: 🇷🇺 俄罗斯 (Russia) 07 - xiaohe
-  server: ru1server.rabstvo.shop
-  port: 443
-  udp: true
-  type: hysteria2
-  password: 9yOIR2_QAChKs26rYaiX_aoNnOALd0aU
-  sni: ru1server.rabstvo.shop
-  skip-cert-verify: true
-- name: 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
-  server: 194.87.118.184
-  port: 2053
-  udp: true
-  type: hysteria2
-  password: 7ab3c77e-8fcc-4848-918f-cae3d4eac794
-  sni: 194.87.118.184
-  skip-cert-verify: true
-- name: 🇷🇺 俄罗斯 (Russia) 09 - xiaohe
-  server: 194.87.118.184
-  port: 2053
-  udp: true
-  type: hysteria2
-  password: 7ab3c77e-8fcc-4848-918f-cae3d4eac794
-  sni: match-stream.lovkisport.blog
-  skip-cert-verify: false
-- name: 🇷🇺 俄罗斯 (Russia) 10 - xiaohe
-  server: 103.24.207.39
-  port: 444
-  udp: true
-  type: vless
-  uuid: 258d8fc5-206c-48fd-88df-169dbbe44d3f
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: P7F65GjTQGZju-N8CVHtlKNaWebVe_76Xt7Lm00RuH0
-  servername: vextor.win
-  client-fingerprint: random
-- name: 🇷🇺 俄罗斯 (Russia) 11 - xiaohe
-  server: 139.28.168.75
-  port: 10444
-  udp: true
-  type: vless
-  uuid: 154bd388-4968-4900-a088-18676f428a20
-  flow: xtls-rprx-vision
-  tls: true
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: video.yandex.ru
-  client-fingerprint: chrome
-- name: 🇷🇺 俄罗斯 (Russia) 12 - xiaohe
-  server: 189.74.114.5
-  port: 54183
-  udp: true
-  type: hysteria2
-  password: 082f5694-9019-4110-b67b-8125dbb9bab8
-  sni: outh.yandex-cloud.org
-  skip-cert-verify: false
-- name: 🇷🇺 俄罗斯 (Russia) 13 - xiaohe
-  server: 189.74.114.5
-  port: 54183
-  udp: true
-  type: hysteria2
-  password: 082f5694-9019-4110-b67b-8125dbb9bab8
-  sni: outh.yandex-cloud.org
-  skip-cert-verify: true
-- name: 🇷🇺 俄罗斯 (Russia) 14 - xiaohe
-  server: 153.80.241.206
+  server: 193.233.74.6
   port: 8444
   udp: true
   type: vless
@@ -131,13 +71,14 @@ proxies:
   tls: true
   reality-opts:
     public-key: FWitre1jinQR7qz5HQ0q2Q4Gg9xA9B0SyizCziN7Ch0
+    short-id: 457fab2ac885dbe0
   servername: github.com
-  client-fingerprint: firefox
+  client-fingerprint: ios
   network: grpc
   grpc-opts:
     grpc-service-name: GunService
-- name: 🇷🇺 俄罗斯 (Russia) 15 - xiaohe
-  server: freede.aiage.work
+- name: 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
+  server: 213.165.56.102
   port: 443
   udp: true
   type: vless
@@ -146,26 +87,10 @@ proxies:
   tls: true
   reality-opts:
     public-key: A_bQLZE6D32TJUdAf9doQTPaTUXyJjPXLSklplG4V1g
-    short-id: 57e7977c9011061c
+    short-id: 5f5e74dfd296b28d
   servername: freede.aiage.work
-  client-fingerprint: random
-- name: 🇷🇺 俄罗斯 (Russia) 16 - xiaohe
-  server: 189.74.114.4
-  port: 54183
-  udp: true
-  type: hysteria2
-  password: 082f5694-9019-4110-b67b-8125dbb9bab8
-  sni: outh.yandex-cloud.org
-  skip-cert-verify: false
-- name: 🇷🇺 俄罗斯 (Russia) 17 - xiaohe
-  server: 189.74.114.4
-  port: 54183
-  udp: true
-  type: hysteria2
-  password: 082f5694-9019-4110-b67b-8125dbb9bab8
-  sni: outh.yandex-cloud.org
-  skip-cert-verify: true
-- name: 🇷🇺 俄罗斯 (Russia) 18 - xiaohe
+  client-fingerprint: ios
+- name: 🇷🇺 俄罗斯 (Russia) 09 - xiaohe
   server: 45.12.75.242
   port: 26424
   udp: true
@@ -176,7 +101,7 @@ proxies:
     public-key: l8AubqcxQO-HRFJy4pZL1vbLOo-eXit69s-XulSELE0
     short-id: 23103e1e
   servername: ya.ru
-  client-fingerprint: chrome
+  client-fingerprint: qq
 proxy-groups:
 - name: PROXIES
   type: select
@@ -191,15 +116,6 @@ proxy-groups:
   - 🇷🇺 俄罗斯 (Russia) 07 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 09 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 10 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 11 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 12 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 13 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 14 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 15 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 16 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 17 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 18 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -214,14 +130,5 @@ proxy-groups:
   - 🇷🇺 俄罗斯 (Russia) 07 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 08 - xiaohe
   - 🇷🇺 俄罗斯 (Russia) 09 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 10 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 11 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 12 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 13 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 14 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 15 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 16 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 17 - xiaohe
-  - 🇷🇺 俄罗斯 (Russia) 18 - xiaohe
 rules:
 - MATCH,PROXIES
