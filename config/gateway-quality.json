@@ -572,6 +572,19 @@
         "ai": 3
       },
       "checked_at": "2026-10-16T02:03:04.746089+00:00"
+    },
+    "61.230.160.34": {
+      "source": "ping0",
+      "risk_score": 6,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-10-19T22:03:51.275544+00:00"
     }
   }
 }
