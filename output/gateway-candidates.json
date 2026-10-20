@@ -1,8 +1,50 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-19T22:03:51.615667+00:00",
+  "generated_at": "2026-10-20T02:35:56.742453+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
+    {
+      "candidate_id": "fs-641d11bf80ae80dc37ded85c",
+      "protocol": "shadowsocks",
+      "country": "KR",
+      "exit_ip": "218.237.185.234",
+      "network_type": "residential",
+      "asn": 9318,
+      "isp": "SK Broadband",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 1570,
+      "speed_bps": 828260,
+      "risk_score": 6,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 6,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-10-14T02:29:33.221153+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 2,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-10-20T02:31:42.931031+00:00",
+      "config": {
+        "type": "shadowsocks",
+        "tag": "node",
+        "server": "p141.panda001.net",
+        "server_port": 4652,
+        "method": "aes-256-cfb",
+        "password": "qwerREWQ@@"
+      }
+    },
     {
       "candidate_id": "fs-a7cdfeb49d59c901a7ba59ea",
       "protocol": "vless",
@@ -15,8 +57,8 @@
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 1929,
-      "speed_bps": 102572,
+      "latency_ms": 2423,
+      "speed_bps": 326637,
       "risk_score": 6,
       "quality": {
         "source": "ping0",
@@ -36,7 +78,7 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-19T21:59:45.602866+00:00",
+      "tested_at": "2026-10-20T02:32:21.075774+00:00",
       "config": {
         "type": "vless",
         "tag": "node",
