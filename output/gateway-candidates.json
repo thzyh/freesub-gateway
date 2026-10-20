@@ -1,22 +1,21 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-20T16:17:54.031037+00:00",
+  "generated_at": "2026-10-20T21:23:10.440798+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-b5cf66dec2402f560b1d6a5f",
-      "protocol": "vless",
-      "country": "TW",
-      "exit_ip": "61.230.160.34",
+      "candidate_id": "fs-641d11bf80ae80dc37ded85c",
+      "protocol": "shadowsocks",
+      "country": "KR",
+      "exit_ip": "218.237.185.234",
       "network_type": "residential",
-      "asn": 3462,
-      "isp": "Chunghwa Telecom",
+      "asn": 9318,
+      "isp": "SK Broadband",
       "upstream_sources": [
-        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 1871,
-      "speed_bps": 1048432,
+      "latency_ms": 1347,
+      "speed_bps": 1178011,
       "risk_score": 6,
       "quality": {
         "source": "ping0",
@@ -29,33 +28,21 @@
           "social_media": 5,
           "ai": 5
         },
-        "checked_at": "2026-10-19T22:03:51.275544+00:00"
+        "checked_at": "2026-10-14T02:29:33.221153+00:00"
       },
       "risk_signals": {
-        "fraud_score": 0,
+        "fraud_score": 2,
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-20T16:12:15.374018+00:00",
+      "tested_at": "2026-10-20T21:15:29.975201+00:00",
       "config": {
-        "type": "vless",
+        "type": "shadowsocks",
         "tag": "node",
-        "server": "hinet1.2yly.com",
-        "server_port": 24215,
-        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
-        "tls": {
-          "enabled": true,
-          "server_name": "addons.mozilla.org",
-          "utls": {
-            "enabled": true,
-            "fingerprint": "chrome"
-          },
-          "reality": {
-            "enabled": true,
-            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
-            "short_id": ""
-          }
-        }
+        "server": "p141.panda001.net",
+        "server_port": 4652,
+        "method": "aes-256-cfb",
+        "password": "qwerREWQ@@"
       }
     }
   ]
