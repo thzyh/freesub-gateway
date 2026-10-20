@@ -5,20 +5,16 @@ mode: rule
 log-level: info
 proxies:
 - name: 🌐 其他地区 (Other) 01 - xiaohe
-  server: 172.67.168.158
-  port: 2087
+  server: 104.18.35.86
+  port: 443
   udp: true
-  type: vless
-  uuid: 1d0e8e53-6999-4752-ac21-c0c54ff5bc09
-  tls: true
-  servername: vn11vina.210z.dev
+  type: trojan
+  password: humanity
+  sni: www.volumerOot.coM.
   skip-cert-verify: false
-  client-fingerprint: chrome
   network: ws
   ws-opts:
-    path: /vlessvina
-    headers:
-      Host: vn11vina.210z.dev
+    path: /assignment
 proxy-groups:
 - name: PROXIES
   type: select

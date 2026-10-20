@@ -4,25 +4,24 @@
   },
   "outbounds": [
     {
-      "type": "vless",
+      "type": "trojan",
       "tag": "🌐 其他地区 (Other) 01 - xiaohe",
-      "server": "172.67.168.158",
-      "server_port": 2087,
-      "uuid": "1d0e8e53-6999-4752-ac21-c0c54ff5bc09",
+      "server": "104.18.35.86",
+      "server_port": 443,
+      "password": "humanity",
       "tls": {
         "enabled": true,
-        "server_name": "vn11vina.210z.dev",
+        "server_name": "www.volumerOot.coM.",
         "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
+        "alpn": [
+          "http/1.1"
+        ]
       },
       "transport": {
         "type": "ws",
-        "path": "/vlessvina",
+        "path": "/assignment",
         "headers": {
-          "Host": "vn11vina.210z.dev"
+          "Host": "www.volumerOot.coM."
         }
       }
     },
