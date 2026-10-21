@@ -1,13 +1,13 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-21T16:19:03.409816+00:00",
+  "generated_at": "2026-10-21T21:04:09.051714+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-152f451af2bb9a89fefd0a8c",
-      "protocol": "vmess",
+      "candidate_id": "fs-8b39f2193a841381c150bbc1",
+      "protocol": "vless",
       "country": "TW",
-      "exit_ip": "61.224.125.189",
+      "exit_ip": "61.230.160.34",
       "network_type": "residential",
       "asn": 3462,
       "isp": "Chunghwa Telecom",
@@ -15,12 +15,12 @@
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/by-country/v2ray-base64-TW.txt",
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 1439,
-      "speed_bps": 1052869,
-      "risk_score": 8,
+      "latency_ms": 1060,
+      "speed_bps": 749592,
+      "risk_score": 6,
       "quality": {
         "source": "ping0",
-        "risk_score": 8,
+        "risk_score": 6,
         "native_ip": true,
         "native_label": "原生 IP",
         "scenario_stars": {
@@ -29,31 +29,31 @@
           "social_media": 5,
           "ai": 5
         },
-        "checked_at": "2026-10-21T16:19:03.018698+00:00"
+        "checked_at": "2026-10-19T22:03:51.275544+00:00"
       },
       "risk_signals": {
         "fraud_score": 0,
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-21T16:18:34.272662+00:00",
+      "tested_at": "2026-10-21T21:03:47.824169+00:00",
       "config": {
-        "type": "vmess",
+        "type": "vless",
         "tag": "node",
-        "server": "9641684.sdf65h4.top",
-        "server_port": 443,
-        "uuid": "250c015d-bab0-4ed3-b638-b4eda48f5840",
-        "security": "auto",
+        "server": "hinet1.2yly.com",
+        "server_port": 24215,
+        "uuid": "19d5a678-8396-4e3b-93da-ece618d0e83a",
         "tls": {
           "enabled": true,
-          "server_name": "9641684.sdf65h4.top",
-          "insecure": false
-        },
-        "transport": {
-          "type": "ws",
-          "path": "/",
-          "headers": {
-            "Host": "9641684.sdf65h4.top"
+          "server_name": "addons.mozilla.org",
+          "utls": {
+            "enabled": true,
+            "fingerprint": "qq"
+          },
+          "reality": {
+            "enabled": true,
+            "public_key": "mdWKUPMVTtTbDqK10BPb89OcqBC2-Lx-4NOYtqc1GWE",
+            "short_id": ""
           }
         }
       }
