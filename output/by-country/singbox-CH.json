@@ -37,21 +37,12 @@
       }
     },
     {
-      "type": "shadowsocks",
-      "tag": "🇨🇭 瑞士 (Switzerland) 03 - xiaohe",
-      "server": "132.243.175.144",
-      "server_port": 8388,
-      "method": "chacha20-ietf-poly1305",
-      "password": "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
-    },
-    {
       "type": "selector",
       "tag": "select",
       "outbounds": [
         "auto",
         "🇨🇭 瑞士 (Switzerland) 01 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 02 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 03 - xiaohe"
+        "🇨🇭 瑞士 (Switzerland) 02 - xiaohe"
       ]
     },
     {
@@ -59,8 +50,7 @@
       "tag": "auto",
       "outbounds": [
         "🇨🇭 瑞士 (Switzerland) 01 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 02 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 03 - xiaohe"
+        "🇨🇭 瑞士 (Switzerland) 02 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
