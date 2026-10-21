@@ -5,12 +5,11 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇮🇪 爱尔兰 (Ireland) 01 - xiaohe
-  server: 52.16.44.28
-  port: 443
+  server: 13.134.170.98
+  port: 22222
   udp: true
-  type: ss
-  cipher: aes-256-cfb
-  password: amazonskr05
+  type: vless
+  uuid: e4514801-0d5a-42ba-869f-39bd605aef9e
 - name: 🇮🇪 爱尔兰 (Ireland) 02 - xiaohe
   server: ie1.dedushka.top
   port: 443
