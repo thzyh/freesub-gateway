@@ -4,16 +4,59 @@
   },
   "outbounds": [
     {
-      "type": "shadowsocks",
+      "type": "vless",
       "tag": "🇨🇭 瑞士 (Switzerland) 01 - xiaohe",
+      "server": "128.241.25.215",
+      "server_port": 30036,
+      "uuid": "196b7228-58df-4bcf-af2a-2e96608d5add",
+      "tls": {
+        "enabled": true,
+        "server_name": "2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev",
+        "insecure": false,
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        }
+      },
+      "transport": {
+        "type": "ws",
+        "path": "/@Marisa_kristi",
+        "headers": {
+          "Host": "2-gys60wmzb6bqzd.qpsjn114hh3vlph9z60sesz0agjawpwroneg.workers.dev"
+        }
+      }
+    },
+    {
+      "type": "shadowsocks",
+      "tag": "🇨🇭 瑞士 (Switzerland) 02 - xiaohe",
       "server": "132.243.175.144",
       "server_port": 8388,
       "method": "chacha20-ietf-poly1305",
       "password": "e8KgS8fD0yDqYFpgN4G5piCOt9aFyqA3"
     },
     {
+      "type": "vless",
+      "tag": "🇨🇭 瑞士 (Switzerland) 03 - xiaohe",
+      "server": "208.69.78.217",
+      "server_port": 2053,
+      "uuid": "c0dd6d59-1573-43af-8b70-1470b2632a6d",
+      "tls": {
+        "enabled": true,
+        "server_name": "www.apple.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0",
+          "short_id": "ad86e2d52ff40ebd"
+        }
+      }
+    },
+    {
       "type": "hysteria2",
-      "tag": "🇨🇭 瑞士 (Switzerland) 02 - xiaohe",
+      "tag": "🇨🇭 瑞士 (Switzerland) 04 - xiaohe",
       "server": "140.238.213.114",
       "server_port": 50160,
       "password": "84a506ca5aca505696a454d828420b3f",
@@ -25,7 +68,7 @@
     },
     {
       "type": "vless",
-      "tag": "🇨🇭 瑞士 (Switzerland) 03 - xiaohe",
+      "tag": "🇨🇭 瑞士 (Switzerland) 05 - xiaohe",
       "server": "45.90.59.15",
       "server_port": 443,
       "uuid": "3950b45e-740d-4dca-ac95-505ec8534592",
@@ -45,95 +88,6 @@
       }
     },
     {
-      "type": "vless",
-      "tag": "🇨🇭 瑞士 (Switzerland) 04 - xiaohe",
-      "server": "45.76.87.125",
-      "server_port": 14750,
-      "uuid": "9c090291-dd8d-454c-98df-3ca2178fcf01",
-      "tls": {
-        "enabled": true,
-        "server_name": "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Marisa_kristi",
-        "headers": {
-          "Host": "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇨🇭 瑞士 (Switzerland) 05 - xiaohe",
-      "server": "208.69.78.217",
-      "server_port": 2053,
-      "uuid": "c0dd6d59-1573-43af-8b70-1470b2632a6d",
-      "tls": {
-        "enabled": true,
-        "server_name": "www.apple.com",
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        },
-        "reality": {
-          "enabled": true,
-          "public_key": "A49ue7zXSusJZdErPAewg3jqGdUFIO1a9xOunEKJfC0",
-          "short_id": "ad86e2d52ff40ebd"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇨🇭 瑞士 (Switzerland) 06 - xiaohe",
-      "server": "185.125.103.62",
-      "server_port": 8082,
-      "uuid": "3dbf58d7-53fc-4fad-8779-1c867e024fd0",
-      "tls": {
-        "enabled": true,
-        "server_name": "wkytah9k8oggj60.qzfi0skkopy875xhtc0l9pwds.workers.dev",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Marisa_kristi",
-        "headers": {
-          "Host": "wkytah9k8oggj60.qzfi0skkopy875xhtc0l9pwds.workers.dev"
-        }
-      }
-    },
-    {
-      "type": "vless",
-      "tag": "🇨🇭 瑞士 (Switzerland) 07 - xiaohe",
-      "server": "116.204.164.60",
-      "server_port": 7443,
-      "uuid": "c676be7d-b481-4bba-88d0-65855e09dc67",
-      "tls": {
-        "enabled": true,
-        "server_name": "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "chrome"
-        }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/@Marisa_kristi",
-        "headers": {
-          "Host": "ke859ch2gse1iery3hiz.e3q4a5mjld11kpj0zj8dq.workers.dev"
-        }
-      }
-    },
-    {
       "type": "selector",
       "tag": "select",
       "outbounds": [
@@ -142,9 +96,7 @@
         "🇨🇭 瑞士 (Switzerland) 02 - xiaohe",
         "🇨🇭 瑞士 (Switzerland) 03 - xiaohe",
         "🇨🇭 瑞士 (Switzerland) 04 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 05 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 06 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 07 - xiaohe"
+        "🇨🇭 瑞士 (Switzerland) 05 - xiaohe"
       ]
     },
     {
@@ -155,9 +107,7 @@
         "🇨🇭 瑞士 (Switzerland) 02 - xiaohe",
         "🇨🇭 瑞士 (Switzerland) 03 - xiaohe",
         "🇨🇭 瑞士 (Switzerland) 04 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 05 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 06 - xiaohe",
-        "🇨🇭 瑞士 (Switzerland) 07 - xiaohe"
+        "🇨🇭 瑞士 (Switzerland) 05 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
