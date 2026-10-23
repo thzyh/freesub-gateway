@@ -12,6 +12,18 @@ proxies:
   cipher: chacha20-ietf-poly1305
   password: nQeEoXC5Yl5PZnPLvKUpFTU9cyQcNG902zpibWkwGbo=
 - name: 🇷🇺 俄罗斯 (Russia) 02 - xiaohe
+  server: 77.90.61.135
+  port: 443
+  udp: true
+  type: vless
+  uuid: 8815925b-c7b8-4f94-9c24-9dc864f63a29
+  tls: true
+  reality-opts:
+    public-key: XlEzAhUOUC-hZA2Uk2sctG5WR9lPeAUAHGNQVu9oAVg
+    short-id: ce1dc482
+  servername: www.cloudflare.com
+  client-fingerprint: random
+- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
   server: 193.233.253.180
   port: 8444
   udp: true
@@ -26,18 +38,6 @@ proxies:
   network: grpc
   grpc-opts:
     grpc-service-name: GunService
-- name: 🇷🇺 俄罗斯 (Russia) 03 - xiaohe
-  server: 77.90.61.135
-  port: 443
-  udp: true
-  type: vless
-  uuid: 8815925b-c7b8-4f94-9c24-9dc864f63a29
-  tls: true
-  reality-opts:
-    public-key: XlEzAhUOUC-hZA2Uk2sctG5WR9lPeAUAHGNQVu9oAVg
-    short-id: ce1dc482
-  servername: www.cloudflare.com
-  client-fingerprint: ios
 - name: 🇷🇺 俄罗斯 (Russia) 04 - xiaohe
   server: xsru1.ddnsfree.com
   port: 443
