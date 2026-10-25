@@ -18,17 +18,21 @@
       "uuid": "8e8210b7-71a4-4799-8b9b-2e69698b1eaf"
     },
     {
-      "type": "vmess",
+      "type": "vless",
       "tag": "🇵🇱 波兰 (Poland) 03 - xiaohe",
-      "server": "54.37.131.126",
-      "server_port": 80,
-      "uuid": "6deef9ad-1357-443d-f95c-cb18952c20b3",
-      "security": "auto",
+      "server": "150.241.87.200",
+      "server_port": 2096,
+      "uuid": "d1641bc6-3757-43db-815a-9b3f4d9b0d7e",
+      "tls": {
+        "enabled": true,
+        "server_name": "stb6390.rumedia-cdn.com",
+        "insecure": false
+      },
       "transport": {
         "type": "ws",
-        "path": "/",
+        "path": "/cdn/v3/live",
         "headers": {
-          "Host": "google.whatsapp.snapp.torob.basalam.hesanid8.ir."
+          "Host": "stb6390.rumedia-cdn.com"
         }
       }
     },

@@ -17,18 +17,19 @@ proxies:
   type: vless
   uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
 - name: 🇵🇱 波兰 (Poland) 03 - xiaohe
-  server: 54.37.131.126
-  port: 80
+  server: 150.241.87.200
+  port: 2096
   udp: true
-  type: vmess
-  uuid: 6deef9ad-1357-443d-f95c-cb18952c20b3
-  alterId: 0
-  cipher: auto
+  type: vless
+  uuid: d1641bc6-3757-43db-815a-9b3f4d9b0d7e
+  tls: true
+  servername: stb6390.rumedia-cdn.com
+  skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /
+    path: /cdn/v3/live
     headers:
-      Host: google.whatsapp.snapp.torob.basalam.hesanid8.ir.
+      Host: stb6390.rumedia-cdn.com
 proxy-groups:
 - name: PROXIES
   type: select
