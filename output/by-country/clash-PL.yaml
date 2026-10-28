@@ -5,17 +5,17 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇵🇱 波兰 (Poland) 01 - xiaohe
-  server: 155.117.5.208
-  port: 20001
-  udp: true
-  type: vless
-  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
-- name: 🇵🇱 波兰 (Poland) 02 - xiaohe
   server: 168.222.43.53
   port: 2052
   udp: true
   type: vless
   uuid: 1a8ecc41-6e62-431b-8eca-87c2fa4dc286
+- name: 🇵🇱 波兰 (Poland) 02 - xiaohe
+  server: 155.117.5.208
+  port: 20001
+  udp: true
+  type: vless
+  uuid: 8e8210b7-71a4-4799-8b9b-2e69698b1eaf
 - name: 🇵🇱 波兰 (Poland) 03 - xiaohe
   server: 45.148.119.127
   port: 443
