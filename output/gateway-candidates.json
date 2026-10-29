@@ -1,10 +1,10 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-29T18:00:21.918168+00:00",
+  "generated_at": "2026-10-29T22:19:23.971330+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
-      "candidate_id": "fs-641d11bf80ae80dc37ded85c",
+      "candidate_id": "fs-d92f6b3ebe4d9d7106280a12",
       "protocol": "shadowsocks",
       "country": "KR",
       "exit_ip": "218.237.185.234",
@@ -14,8 +14,8 @@
       "upstream_sources": [
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 1482,
-      "speed_bps": 264925,
+      "latency_ms": 698,
+      "speed_bps": 1359947,
       "risk_score": 6,
       "quality": {
         "source": "ping0",
@@ -35,11 +35,11 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-29T17:54:24.927628+00:00",
+      "tested_at": "2026-10-29T22:16:35.033873+00:00",
       "config": {
         "type": "shadowsocks",
         "tag": "node",
-        "server": "p141.panda001.net",
+        "server": "218.237.185.234",
         "server_port": 4652,
         "method": "aes-256-cfb",
         "password": "qwerREWQ@@"

@@ -5,7 +5,7 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe
-  server: p141.panda001.net
+  server: 218.237.185.234
   port: 4652
   udp: true
   type: ss
@@ -20,7 +20,7 @@ proxies:
   tls: true
   servername: app-6ada5023.deploy.meerasolution.com
   skip-cert-verify: false
-  client-fingerprint: chrome
+  client-fingerprint: android
   network: ws
   ws-opts:
     path: /ws/16ae3ea5-cf3e-6973-7bf3-2b4b28d0ea88
