@@ -14,26 +14,8 @@ proxies:
   ws-opts:
     path: /ws
     headers:
-      Host: aIs.SpEeDtEsT.nEt
+      Host: ais.speedtest.net
 - name: 🇹🇭 泰国 (Thailand) 02 - xiaohe
-  server: th001.zestapp778.com
-  port: 22222
-  udp: true
-  type: vless
-  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
-  tls: true
-  servername: th001.zestapp778.com
-  skip-cert-verify: false
-  client-fingerprint: chrome
-- name: 🇹🇭 泰国 (Thailand) 03 - xiaohe
-  server: th001.zestapp778.com
-  port: 33079
-  udp: true
-  type: trojan
-  password: 5t6i121em5lkmsmk
-  sni: th001.zestapp778.com
-  skip-cert-verify: true
-- name: 🇹🇭 泰国 (Thailand) 04 - xiaohe
   server: 45.154.26.63
   port: 443
   udp: true
@@ -46,6 +28,24 @@ proxies:
     short-id: 3c032a7e
   servername: www.cloudflare.com
   client-fingerprint: chrome
+- name: 🇹🇭 泰国 (Thailand) 03 - xiaohe
+  server: th001.zestapp778.com
+  port: 33079
+  udp: true
+  type: trojan
+  password: 5t6i121em5lkmsmk
+  sni: th001.zestapp778.com
+  skip-cert-verify: true
+- name: 🇹🇭 泰国 (Thailand) 04 - xiaohe
+  server: 38.60.233.38
+  port: 22222
+  udp: true
+  type: vless
+  uuid: e9a8144e-5237-488a-afb1-9ca3d8d54c80
+  tls: true
+  servername: th001.zestapp778.com
+  skip-cert-verify: false
+  client-fingerprint: firefox
 proxy-groups:
 - name: PROXIES
   type: select

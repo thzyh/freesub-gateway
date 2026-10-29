@@ -1,6 +1,49 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-29T12:03:12.621517+00:00",
+  "generated_at": "2026-10-29T18:00:21.918168+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "fs-641d11bf80ae80dc37ded85c",
+      "protocol": "shadowsocks",
+      "country": "KR",
+      "exit_ip": "218.237.185.234",
+      "network_type": "residential",
+      "asn": 9318,
+      "isp": "SK Broadband",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 1482,
+      "speed_bps": 264925,
+      "risk_score": 6,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 6,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-10-27T21:39:10.473199+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 2,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-10-29T17:54:24.927628+00:00",
+      "config": {
+        "type": "shadowsocks",
+        "tag": "node",
+        "server": "p141.panda001.net",
+        "server_port": 4652,
+        "method": "aes-256-cfb",
+        "password": "qwerREWQ@@"
+      }
+    }
+  ]
 }
