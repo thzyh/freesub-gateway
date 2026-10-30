@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-29T22:19:23.971330+00:00",
+  "generated_at": "2026-10-30T03:19:17.110883+00:00",
   "source_repository": "thzyh/freesub-gateway",
   "candidates": [
     {
@@ -14,8 +14,8 @@
       "upstream_sources": [
         "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
       ],
-      "latency_ms": 698,
-      "speed_bps": 1359947,
+      "latency_ms": 709,
+      "speed_bps": 715996,
       "risk_score": 6,
       "quality": {
         "source": "ping0",
@@ -35,7 +35,7 @@
         "ip_api_proxy": false,
         "ip_api_hosting": false
       },
-      "tested_at": "2026-10-29T22:16:35.033873+00:00",
+      "tested_at": "2026-10-30T03:18:32.881013+00:00",
       "config": {
         "type": "shadowsocks",
         "tag": "node",
