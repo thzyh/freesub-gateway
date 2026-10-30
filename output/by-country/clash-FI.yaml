@@ -16,22 +16,20 @@ proxies:
     headers:
       Host: 45.144.234.157
 - name: 🇫🇮 芬兰 (Finland) 02 - xiaohe
-  server: 65.109.211.81
-  port: 465
+  server: 45.144.52.187
+  port: 443
   udp: true
   type: vless
-  uuid: 09f30c46-3964-41ce-882a-72aee83ddd42
+  uuid: 7b22dce8-7ebd-425b-8ca4-7b6190321985
   tls: true
-  servername: hw6.divarkhaghazi.com.
+  servername: b.fi-1.bnc-gt.co.uk
   skip-cert-verify: false
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: hw6.divarkhaghazi.com.
+  client-fingerprint: qq
+  network: grpc
+  grpc-opts:
+    grpc-service-name: grpc
 - name: 🇫🇮 芬兰 (Finland) 03 - xiaohe
-  server: 65.109.210.221
+  server: hw3.divarkhaghazi.com
   port: 465
   udp: true
   type: vless
