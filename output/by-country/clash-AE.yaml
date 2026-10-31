@@ -15,24 +15,15 @@ proxies:
   obfs: salamander
   obfs-password: rG07s3COMIEvdnQipRyWzx_H_2xygNC3
 - name: 🇦🇪 阿联酋 (UAE) 02 - xiaohe
-  server: 178.253.16.185
-  port: 8388
-  udp: true
-  type: ss
-  cipher: chacha20-ietf-poly1305
-  password: x2A6AsyZ-rAllz0wbKHzWA
-- name: 🇦🇪 阿联酋 (UAE) 03 - xiaohe
-  server: 84.235.244.108
-  port: 22573
+  server: 95.174.68.188
+  port: 14430
   udp: true
   type: vless
-  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
+  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
   network: ws
   ws-opts:
-    path: /
-    headers:
-      Host: uae.unixzone.us
-- name: 🇦🇪 阿联酋 (UAE) 04 - xiaohe
+    path: /vless
+- name: 🇦🇪 阿联酋 (UAE) 03 - xiaohe
   server: app-mi-26.spbstudentlife.com
   port: 443
   udp: true
@@ -45,17 +36,24 @@ proxies:
     short-id: a7856800c2deb7b2
   servername: assets-mi-26.spbstudentlife.com
   client-fingerprint: randomized
-- name: 🇦🇪 阿联酋 (UAE) 05 - xiaohe
-  server: 95.174.68.188
-  port: 14430
+- name: 🇦🇪 阿联酋 (UAE) 04 - xiaohe
+  server: 84.235.244.108
+  port: 22573
   udp: true
   type: vless
-  uuid: 965ffbbe-c6b6-4d5f-8dea-6d8abc55d9c0
+  uuid: 39947382-3212-41c9-bc3a-589574ac8b23
   network: ws
   ws-opts:
-    path: /vless
+    path: /
     headers:
-      Host: 95.174.68.188
+      Host: uae.unixzone.us
+- name: 🇦🇪 阿联酋 (UAE) 05 - xiaohe
+  server: 178.253.16.185
+  port: 8388
+  udp: true
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: x2A6AsyZ-rAllz0wbKHzWA
 proxy-groups:
 - name: PROXIES
   type: select
