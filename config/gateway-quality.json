@@ -663,6 +663,19 @@
         "ai": 4
       },
       "checked_at": "2026-10-30T11:55:09.070572+00:00"
+    },
+    "112.169.175.199": {
+      "source": "ping0",
+      "risk_score": 15,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-10-31T03:05:38.571145+00:00"
     }
   }
 }

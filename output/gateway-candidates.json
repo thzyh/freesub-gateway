@@ -1,6 +1,48 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-30T21:51:59.651869+00:00",
+  "generated_at": "2026-10-31T03:05:38.830935+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": []
+  "candidates": [
+    {
+      "candidate_id": "fs-1174b36a74aa3cd2fd64b3f5",
+      "protocol": "vless",
+      "country": "KR",
+      "exit_ip": "112.169.175.199",
+      "network_type": "residential",
+      "asn": 4766,
+      "isp": "KT",
+      "upstream_sources": [
+        "https://github.com/Au1rxx/free-vpn-subscriptions/raw/main/output/v2ray-base64.txt"
+      ],
+      "latency_ms": 523,
+      "speed_bps": 296031,
+      "risk_score": 15,
+      "quality": {
+        "source": "ping0",
+        "risk_score": 15,
+        "native_ip": true,
+        "native_label": "原生 IP",
+        "scenario_stars": {
+          "tiktok": 5,
+          "cross_border_ecommerce": 5,
+          "social_media": 5,
+          "ai": 5
+        },
+        "checked_at": "2026-10-31T03:05:38.571145+00:00"
+      },
+      "risk_signals": {
+        "fraud_score": 0,
+        "ip_api_proxy": false,
+        "ip_api_hosting": false
+      },
+      "tested_at": "2026-10-31T03:04:19.331417+00:00",
+      "config": {
+        "type": "vless",
+        "tag": "node",
+        "server": "112.169.175.199",
+        "server_port": 31157,
+        "uuid": "bd2fb303-b4c7-49af-a8e3-5c6f11b005dd"
+      }
+    }
+  ]
 }
