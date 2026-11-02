@@ -1,53 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-11-01T21:34:00.421859+00:00",
+  "generated_at": "2026-11-02T03:05:59.231963+00:00",
   "source_repository": "thzyh/freesub-gateway",
-  "candidates": [
-    {
-      "candidate_id": "fs-7d2d2405f1a67e6f904f2738",
-      "protocol": "trojan",
-      "country": "TW",
-      "exit_ip": "2001:b030:a81d:a00:0:4034:4:1",
-      "network_type": "residential",
-      "asn": 3462,
-      "isp": "Chunghwa Telecom",
-      "upstream_sources": [
-        "https://www.ermao.net/sub/v2ray/ermao.net"
-      ],
-      "latency_ms": 986,
-      "speed_bps": 1195379,
-      "risk_score": 3,
-      "quality": {
-        "source": "ping0",
-        "risk_score": 3,
-        "native_ip": true,
-        "native_label": "原生 IP",
-        "scenario_stars": {
-          "tiktok": 5,
-          "cross_border_ecommerce": 5,
-          "social_media": 5,
-          "ai": 5
-        },
-        "checked_at": "2026-11-01T21:33:59.713799+00:00"
-      },
-      "risk_signals": {
-        "fraud_score": 0,
-        "ip_api_proxy": false,
-        "ip_api_hosting": false
-      },
-      "tested_at": "2026-11-01T21:32:59.662339+00:00",
-      "config": {
-        "type": "trojan",
-        "tag": "node",
-        "server": "ench-snet-app.w-ctrip.cn",
-        "server_port": 45502,
-        "password": "b17e9b52db9623bd6c16eea3d7adb5b3",
-        "tls": {
-          "enabled": true,
-          "server_name": "cm.g.doubleclick.net",
-          "insecure": true
-        }
-      }
-    }
-  ]
+  "candidates": []
 }
