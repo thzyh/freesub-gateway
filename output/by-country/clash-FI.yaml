@@ -5,47 +5,6 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇫🇮 芬兰 (Finland) 01 - xiaohe
-  server: 45.144.234.157
-  port: 14430
-  udp: true
-  type: vless
-  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
-  network: ws
-  ws-opts:
-    path: /vless
-    headers:
-      Host: 45.144.234.157
-- name: 🇫🇮 芬兰 (Finland) 02 - xiaohe
-  server: 65.109.211.81
-  port: 465
-  udp: true
-  type: vless
-  uuid: 09f30c46-3964-41ce-882a-72aee83ddd42
-  tls: true
-  servername: hw6.divarkhaghazi.com.
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /
-    headers:
-      Host: hw6.divarkhaghazi.com.
-- name: 🇫🇮 芬兰 (Finland) 03 - xiaohe
-  server: 84.22.150.39
-  port: 7443
-  udp: true
-  type: vless
-  uuid: 9d5cbb90-876b-448d-9874-27ab35bae6e7
-  tls: true
-  servername: woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  network: ws
-  ws-opts:
-    path: /@Marisa_kristi
-    headers:
-      Host: woc0zvrf11w2endu.dphdlc1u77bs3y4kvussbuap4p576f1ws7igthq8zbf3.workers.dev
-- name: 🇫🇮 芬兰 (Finland) 04 - xiaohe
   server: 95.216.27.15
   port: 2053
   udp: true
@@ -57,6 +16,17 @@ proxies:
     short-id: 10351b07c712d2a2
   servername: www.cloudflare.com
   client-fingerprint: ''
+- name: 🇫🇮 芬兰 (Finland) 02 - xiaohe
+  server: 45.144.234.157
+  port: 14430
+  udp: true
+  type: vless
+  uuid: 59b0d30e-9b29-4fda-a35c-b2901ec32db7
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 45.144.234.157
 proxy-groups:
 - name: PROXIES
   type: select
@@ -64,8 +34,6 @@ proxy-groups:
   - AUTO
   - 🇫🇮 芬兰 (Finland) 01 - xiaohe
   - 🇫🇮 芬兰 (Finland) 02 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 03 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -73,7 +41,5 @@ proxy-groups:
   proxies:
   - 🇫🇮 芬兰 (Finland) 01 - xiaohe
   - 🇫🇮 芬兰 (Finland) 02 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 03 - xiaohe
-  - 🇫🇮 芬兰 (Finland) 04 - xiaohe
 rules:
 - MATCH,PROXIES
