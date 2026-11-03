@@ -741,6 +741,45 @@
         "ai": 5
       },
       "checked_at": "2026-11-03T00:16:10.434264+00:00"
+    },
+    "60.248.219.52": {
+      "source": "ping0",
+      "risk_score": 64,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 1,
+        "cross_border_ecommerce": 1,
+        "social_media": 1,
+        "ai": 1
+      },
+      "checked_at": "2026-11-03T22:47:52.001048+00:00"
+    },
+    "122.118.147.50": {
+      "source": "ping0",
+      "risk_score": 9,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-11-03T22:47:51.046857+00:00"
+    },
+    "219.79.154.242": {
+      "source": "ping0",
+      "risk_score": 9,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 1
+      },
+      "checked_at": "2026-11-03T22:47:50.746131+00:00"
     }
   }
 }
