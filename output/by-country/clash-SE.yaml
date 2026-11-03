@@ -13,13 +13,39 @@ proxies:
   sni: searchhealthcarejobsandbuildmedicalcareerpathway.com
   skip-cert-verify: false
 - name: 🇸🇪 瑞典 (Sweden) 02 - xiaohe
-  server: 192.142.23.46
+  server: se.mimowhat.online
   port: 443
   udp: true
   type: hysteria2
-  password: a0052f4f-4c63-0002-a16f-ab2d5d718cd3
-  sni: diffoscope.com
+  password: 769f34f0-1500-488f-b414-03bc90666502
+  sni: se.mimowhat.online
   skip-cert-verify: false
+- name: 🇸🇪 瑞典 (Sweden) 03 - xiaohe
+  server: 5.178.109.174
+  port: 14430
+  udp: true
+  type: vless
+  uuid: 80de563a-cac8-40ea-8cb0-4cb082dd92f9
+  network: ws
+  ws-opts:
+    path: /vless
+    headers:
+      Host: 5.178.109.174
+- name: 🇸🇪 瑞典 (Sweden) 04 - xiaohe
+  server: 43.163.86.187
+  port: 443
+  udp: true
+  type: vless
+  uuid: 26524cce-d514-4014-a426-365fb266a14d
+  tls: true
+  servername: xy1ej.stream-node-us.danfeng.qzz.io
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /danfeng?ed=2560
+    headers:
+      Host: xy1ej.stream-node-us.danfeng.qzz.io
 proxy-groups:
 - name: PROXIES
   type: select
@@ -27,6 +53,8 @@ proxy-groups:
   - AUTO
   - 🇸🇪 瑞典 (Sweden) 01 - xiaohe
   - 🇸🇪 瑞典 (Sweden) 02 - xiaohe
+  - 🇸🇪 瑞典 (Sweden) 03 - xiaohe
+  - 🇸🇪 瑞典 (Sweden) 04 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
@@ -34,5 +62,7 @@ proxy-groups:
   proxies:
   - 🇸🇪 瑞典 (Sweden) 01 - xiaohe
   - 🇸🇪 瑞典 (Sweden) 02 - xiaohe
+  - 🇸🇪 瑞典 (Sweden) 03 - xiaohe
+  - 🇸🇪 瑞典 (Sweden) 04 - xiaohe
 rules:
 - MATCH,PROXIES
