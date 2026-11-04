@@ -780,6 +780,32 @@
         "ai": 1
       },
       "checked_at": "2026-11-03T22:47:50.746131+00:00"
+    },
+    "122.118.147.206": {
+      "source": "ping0",
+      "risk_score": 3,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 5
+      },
+      "checked_at": "2026-11-04T23:05:34.870588+00:00"
+    },
+    "112.118.187.45": {
+      "source": "ping0",
+      "risk_score": 9,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 5,
+        "cross_border_ecommerce": 5,
+        "social_media": 5,
+        "ai": 1
+      },
+      "checked_at": "2026-11-04T23:05:34.003775+00:00"
     }
   }
 }
