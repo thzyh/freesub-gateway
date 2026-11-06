@@ -640,16 +640,16 @@
     },
     "49.254.204.133": {
       "source": "ping0",
-      "risk_score": 20,
+      "risk_score": 77,
       "native_ip": true,
       "native_label": "原生 IP",
       "scenario_stars": {
-        "tiktok": 3,
-        "cross_border_ecommerce": 3,
-        "social_media": 3,
-        "ai": 4
+        "tiktok": 1,
+        "cross_border_ecommerce": 1,
+        "social_media": 1,
+        "ai": 1
       },
-      "checked_at": "2026-10-30T11:55:08.294379+00:00"
+      "checked_at": "2026-11-06T22:37:36.589268+00:00"
     },
     "122.176.216.52": {
       "source": "ping0",
