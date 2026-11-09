@@ -5,6 +5,34 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇨🇿 捷克 (Czech) 01 - xiaohe
+  server: 129.101.103.211
+  port: 443
+  udp: true
+  type: vless
+  uuid: 3f5e89d5-591f-4ac9-b071-b05680b573c3
+  flow: xtls-rprx-vision
+  tls: true
+  reality-opts:
+    public-key: 8fSwTqCwJ2HWGxcTQsZs8Sx0hRk2Ru7HFdu-iLnesGg
+    short-id: 53d0d0611a
+  servername: de2.gacvpn.site
+  client-fingerprint: firefox
+- name: 🇨🇿 捷克 (Czech) 02 - xiaohe
+  server: 172.237.91.206
+  port: 443
+  udp: true
+  type: vless
+  uuid: 4d945644-69ab-47e0-98b3-d43a6313135d
+  tls: true
+  servername: mhoX6Xz96zGe3qv5HISuFj9B.paGeS.DEV
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /vl/SaXqikbSPA3ImtmZKAFin?ed=2560
+    headers:
+      Host: mhoX6Xz96zGe3qv5HISuFj9B.paGeS.DEV
+- name: 🇨🇿 捷克 (Czech) 03 - xiaohe
   server: server.slavkiti.monster
   port: 443
   udp: true
@@ -23,11 +51,15 @@ proxy-groups:
   proxies:
   - AUTO
   - 🇨🇿 捷克 (Czech) 01 - xiaohe
+  - 🇨🇿 捷克 (Czech) 02 - xiaohe
+  - 🇨🇿 捷克 (Czech) 03 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🇨🇿 捷克 (Czech) 01 - xiaohe
+  - 🇨🇿 捷克 (Czech) 02 - xiaohe
+  - 🇨🇿 捷克 (Czech) 03 - xiaohe
 rules:
 - MATCH,PROXIES
