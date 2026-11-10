@@ -4,26 +4,29 @@ allow-lan: true
 mode: rule
 log-level: info
 proxies:
-- name: 🇮🇷 IR 01 - xiaohe
-  server: 87.248.149.50
-  port: 443
+- name: 🇱🇹 立陶宛 (Lithuania) 01 - xiaohe
+  server: 45.81.252.143
+  port: 2053
   udp: true
   type: vless
-  uuid: 667016ca-f02e-4b5f-bfc3-3d8ed81e9bec
+  uuid: 53555197-bf0a-49e6-bea1-211fcfc1d962
   tls: true
-  servername: base.hosamobenl.co.uk
+  servername: germany3.banovano.space
   skip-cert-verify: false
+  network: grpc
+  grpc-opts:
+    grpc-service-name: ''
 proxy-groups:
 - name: PROXIES
   type: select
   proxies:
   - AUTO
-  - 🇮🇷 IR 01 - xiaohe
+  - 🇱🇹 立陶宛 (Lithuania) 01 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
-  - 🇮🇷 IR 01 - xiaohe
+  - 🇱🇹 立陶宛 (Lithuania) 01 - xiaohe
 rules:
 - MATCH,PROXIES
