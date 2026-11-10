@@ -806,6 +806,19 @@
         "ai": 1
       },
       "checked_at": "2026-11-04T23:05:34.003775+00:00"
+    },
+    "130.94.20.17": {
+      "source": "ping0",
+      "risk_score": 17,
+      "native_ip": true,
+      "native_label": "原生 IP",
+      "scenario_stars": {
+        "tiktok": 3,
+        "cross_border_ecommerce": 3,
+        "social_media": 3,
+        "ai": 4
+      },
+      "checked_at": "2026-11-10T22:43:57.137051+00:00"
     }
   }
 }

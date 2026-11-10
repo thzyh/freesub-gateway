@@ -5,21 +5,21 @@ mode: rule
 log-level: info
 proxies:
 - name: 🌐 其他地区 (Other) 01 - xiaohe
-  server: 104.21.91.53
-  port: 8443
+  server: 172.67.190.164
+  port: 443
   udp: true
   type: vmess
-  uuid: 60441548-b68e-43b2-8191-e3b884be4b3c
+  uuid: 6a89a215-22bf-4bd7-9642-b95b2e09583a
   alterId: 0
   cipher: auto
   tls: true
-  servername: v2ray1.dozapp.xyz
+  servername: guanwang.awsno.com
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /lMnsZUN4/
+    path: /hls/cctv5phd.m3u8
     headers:
-      Host: v2ray1.dozapp.xyz
+      Host: guanwang.awsno.com
 proxy-groups:
 - name: PROXIES
   type: select
