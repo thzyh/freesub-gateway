@@ -59,18 +59,18 @@ proxies:
   cipher: rc4-md5
   password: 14fFPrbezE3HDZzsMOr6
 - name: 🇬🇧 英国 (United Kingdom) 08 - xiaohe
-  server: 138.124.125.193
-  port: 10444
+  server: 34.39.80.57
+  port: 50818
   udp: true
   type: vless
-  uuid: e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4
-  flow: xtls-rprx-vision
+  uuid: 408c814e-f70a-4d16-b3b3-8182bb70211d
   tls: true
-  reality-opts:
-    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
-    short-id: 8debcf36f1cc69ff
-  servername: ads.x5.ru
-  client-fingerprint: random
+  servername: yingguo.rymaker.cn
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  network: ws
+  ws-opts:
+    path: /GunService
 - name: 🇬🇧 英国 (United Kingdom) 09 - xiaohe
   server: 98.98.142.161
   port: 8080
@@ -112,17 +112,18 @@ proxies:
   servername: www.mozilla.org
   client-fingerprint: firefox
 - name: 🇬🇧 英国 (United Kingdom) 13 - xiaohe
-  server: 46.250.250.149
-  port: 2053
+  server: 138.124.125.193
+  port: 10444
   udp: true
   type: vless
-  uuid: b4caaf57-ad77-4948-a6f5-51b3513799bf
+  uuid: e57ce64d-5a1a-4a90-96df-9e1bd3ad26e4
+  flow: xtls-rprx-vision
   tls: true
   reality-opts:
-    public-key: hieuCHb3HYdDYHmTDyWw2SGqyfo36AVuA-wSiZMdU1M
-    short-id: 9922313fffed1c63
-  servername: www.apple.com
-  client-fingerprint: firefox
+    public-key: 0oTkcqwLTUNLnSOP-VUWErmy6usAIg-biBE6ioZO-Vo
+    short-id: 8debcf36f1cc69ff
+  servername: ads.x5.ru
+  client-fingerprint: random
 proxy-groups:
 - name: PROXIES
   type: select
