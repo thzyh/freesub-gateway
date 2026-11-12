@@ -4,22 +4,19 @@
   },
   "outbounds": [
     {
-      "type": "trojan",
-      "tag": "🇧🇬 保加利亚 (Bulgaria) 01 - xiaohe",
-      "server": "191.44.112.170.sslip.io",
-      "server_port": 443,
-      "password": "46d221fa-e9b4-748c-4eae-019a88e42991",
+      "type": "vless",
+      "tag": "🇰🇿 哈萨克斯坦 (Kazakhstan) 01 - xiaohe",
+      "server": "3h-kazakhstan1.09vpn.com",
+      "server_port": 8443,
+      "uuid": "2424febb-43cb-488d-bdd1-401e923c8e48",
       "tls": {
         "enabled": true,
-        "server_name": "orbylume.my.to",
+        "server_name": "3h-kazakhstan1.09vpn.com",
         "insecure": false
       },
       "transport": {
         "type": "ws",
-        "path": "/tvpn-trojan/bg",
-        "headers": {
-          "Host": "orbylume.my.to"
-        }
+        "path": "/vless/"
       }
     },
     {
@@ -27,14 +24,14 @@
       "tag": "select",
       "outbounds": [
         "auto",
-        "🇧🇬 保加利亚 (Bulgaria) 01 - xiaohe"
+        "🇰🇿 哈萨克斯坦 (Kazakhstan) 01 - xiaohe"
       ]
     },
     {
       "type": "urltest",
       "tag": "auto",
       "outbounds": [
-        "🇧🇬 保加利亚 (Bulgaria) 01 - xiaohe"
+        "🇰🇿 哈萨克斯坦 (Kazakhstan) 01 - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
