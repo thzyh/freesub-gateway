@@ -832,6 +832,19 @@
         "ai": 1
       },
       "checked_at": "2026-11-17T01:19:17.824897+00:00"
+    },
+    "163.123.193.7": {
+      "source": "ping0",
+      "risk_score": 89,
+      "native_ip": false,
+      "native_label": "广播 IP",
+      "scenario_stars": {
+        "tiktok": 1,
+        "cross_border_ecommerce": 1,
+        "social_media": 1,
+        "ai": 1
+      },
+      "checked_at": "2026-11-19T14:56:18.198376+00:00"
     }
   }
 }
