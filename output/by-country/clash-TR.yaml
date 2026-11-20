@@ -5,6 +5,17 @@ mode: rule
 log-level: info
 proxies:
 - name: 🇹🇷 土耳其 (Turkey) 01 - xiaohe
+  server: 198.105.123.253
+  port: 2058
+  udp: true
+  type: vless
+  uuid: 83be8a03-cbed-4fca-8403-37fc21793159
+  flow: xtls-rprx-vision
+  tls: true
+  servername: Tx1.qoqnusradio.top
+  skip-cert-verify: false
+  client-fingerprint: firefox
+- name: 🇹🇷 土耳其 (Turkey) 02 - xiaohe
   server: 87.76.154.28
   port: 57231
   udp: true
@@ -16,11 +27,13 @@ proxy-groups:
   proxies:
   - AUTO
   - 🇹🇷 土耳其 (Turkey) 01 - xiaohe
+  - 🇹🇷 土耳其 (Turkey) 02 - xiaohe
 - name: AUTO
   type: url-test
   url: https://www.gstatic.com/generate_204
   interval: 300
   proxies:
   - 🇹🇷 土耳其 (Turkey) 01 - xiaohe
+  - 🇹🇷 土耳其 (Turkey) 02 - xiaohe
 rules:
 - MATCH,PROXIES
