@@ -23,19 +23,12 @@ proxies:
   servername: xmfhlpy.com
   skip-cert-verify: false
 - name: 🇦🇹 奥地利 (Austria) 03 - xiaohe
-  server: 212.109.193.194
-  port: 2096
+  server: 152.53.1.57
+  port: 8388
   udp: true
-  type: vless
-  uuid: e436321f-24a9-4c38-b935-7d7dee0c3f68
-  tls: true
-  reality-opts:
-    public-key: SbVKOEMjK0sIlbwg4akyBg5mL5KZwwB-ed4eEE7YnRc
-  servername: id.vk.com
-  client-fingerprint: firefox
-  network: grpc
-  grpc-opts:
-    grpc-service-name: vless-grpc-reality
+  type: ss
+  cipher: chacha20-ietf-poly1305
+  password: AdawffFMHymlasRb0VOP3HFf7sTG5sJx
 proxy-groups:
 - name: PROXIES
   type: select
