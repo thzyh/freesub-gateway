@@ -4,25 +4,21 @@
   },
   "outbounds": [
     {
-      "type": "vless",
+      "type": "trojan",
       "tag": "🌐 其他地区 (Other) 01 - xiaohe",
-      "server": "104.21.94.203",
+      "server": "104.25.211.29",
       "server_port": 443,
-      "uuid": "364D2D52-E61E-4E52-80EC-2BC6BDF15349",
+      "password": "1vkFHbQX_gN1U8V8jVc",
       "tls": {
         "enabled": true,
-        "server_name": "fr-free.fastestrelay.com",
-        "insecure": false,
-        "utls": {
-          "enabled": true,
-          "fingerprint": "qq"
-        }
+        "server_name": "mhpanel.kigaping.com",
+        "insecure": false
       },
       "transport": {
         "type": "ws",
-        "path": "/700gvl",
+        "path": "/trojan-ws",
         "headers": {
-          "Host": "fr-free.fastestrelay.com"
+          "Host": "mhpanel.kigaping.com"
         }
       }
     },
