@@ -7,17 +7,17 @@
       "type": "shadowsocks",
       "tag": "🇵🇱 波兰 (Poland) 01 - xiaohe",
       "server": "217.30.10.70",
-      "server_port": 9018,
+      "server_port": 9020,
       "method": "aes-256-cfb",
-      "password": "fG2artUmHfNT2cX7"
+      "password": "BNmAXXxAHYpTRdzu"
     },
     {
       "type": "shadowsocks",
       "tag": "🇵🇱 波兰 (Poland) 02 - xiaohe",
       "server": "217.30.10.70",
-      "server_port": 9020,
+      "server_port": 9018,
       "method": "aes-256-cfb",
-      "password": "BNmAXXxAHYpTRdzu"
+      "password": "fG2artUmHfNT2cX7"
     },
     {
       "type": "vless",
@@ -43,17 +43,21 @@
     {
       "type": "vless",
       "tag": "🇵🇱 波兰 (Poland) 04 - xiaohe",
-      "server": "45.194.66.177",
+      "server": "150.251.113.34",
       "server_port": 443,
-      "uuid": "352a250d-080b-47b5-b7db-f9f8fa31c551",
+      "uuid": "d7d724b5-17ce-4f3c-877d-dfbf0f07afa1",
       "flow": "xtls-rprx-vision",
       "tls": {
         "enabled": true,
-        "server_name": "31tawwo0.virtual-network.lol",
-        "insecure": false,
+        "server_name": "www.cloudflare.com",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "8yMLSTbkpJFfbgTjNzotzz7U8OT6AERrclgKdKrXXW8",
+          "short_id": "150a627d15154cf2"
         }
       }
     },
