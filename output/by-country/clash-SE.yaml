@@ -34,19 +34,6 @@ proxies:
     headers:
       Host: 5.178.109.174
 - name: 🇸🇪 瑞典 (Sweden) 04 - xiaohe
-  server: 138.124.86.230
-  port: 48115
-  udp: true
-  type: vless
-  uuid: b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b
-  tls: true
-  servername: 138-124-86-230.sslip.io
-  skip-cert-verify: false
-  client-fingerprint: chrome
-  network: grpc
-  grpc-opts:
-    grpc-service-name: 138-124-86-230-sslip-io
-- name: 🇸🇪 瑞典 (Sweden) 05 - xiaohe
   server: 185.117.88.9
   port: 8443
   udp: true
@@ -59,20 +46,31 @@ proxies:
     short-id: f8d0271b4b5f9efc
   servername: www.apple.com
   client-fingerprint: chrome
+- name: 🇸🇪 瑞典 (Sweden) 05 - xiaohe
+  server: 138.124.86.230
+  port: 48115
+  udp: true
+  type: vless
+  uuid: b2fe1fa4-6a79-4938-a3f4-63b54ae7f16b
+  tls: true
+  servername: 138-124-86-230.sslip.io
+  skip-cert-verify: false
+  client-fingerprint: chrome
+  network: grpc
+  grpc-opts:
+    grpc-service-name: 138-124-86-230-sslip-io
 - name: 🇸🇪 瑞典 (Sweden) 06 - xiaohe
-  server: 92.223.84.254
+  server: 77.232.143.142
   port: 443
   udp: true
   type: vless
-  uuid: 63242a2a-7bdb-4775-bc3f-65c2f260f224
+  uuid: 58e22afd-bf74-4736-984d-63a8ca03d7f0
   tls: true
-  servername: subgift.gcorecdn.com
+  servername: volumestyle.komediyatorg.net
   skip-cert-verify: false
   network: ws
   ws-opts:
-    path: /t.me-SubGift
-    headers:
-      Host: subgift.gcorecdn.com
+    path: /media/ws/
 - name: 🇸🇪 瑞典 (Sweden) 07 - xiaohe
   server: 2.26.93.106
   port: 443
@@ -82,7 +80,7 @@ proxies:
   tls: true
   servername: depotchannel.lucheeebezlimitnoekino.stream
   skip-cert-verify: false
-  client-fingerprint: firefox
+  client-fingerprint: edge
   network: ws
   ws-opts:
     path: /media/ws/
