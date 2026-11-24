@@ -822,7 +822,7 @@
     },
     "163.123.193.9": {
       "source": "ping0",
-      "risk_score": 83,
+      "risk_score": 89,
       "native_ip": false,
       "native_label": "广播 IP",
       "scenario_stars": {
@@ -831,7 +831,7 @@
         "social_media": 1,
         "ai": 1
       },
-      "checked_at": "2026-11-17T01:19:17.824897+00:00"
+      "checked_at": "2026-11-24T03:42:44.665976+00:00"
     },
     "163.123.193.7": {
       "source": "ping0",

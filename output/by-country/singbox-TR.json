@@ -18,7 +18,7 @@
         ],
         "utls": {
           "enabled": true,
-          "fingerprint": "ios"
+          "fingerprint": "edge"
         }
       },
       "transport": {
@@ -29,21 +29,21 @@
     {
       "type": "vless",
       "tag": "🇹🇷 土耳其 (Turkey) 02 - xiaohe",
-      "server": "194.135.34.118",
-      "server_port": 8443,
-      "uuid": "020f7f86-a559-4366-8d2d-c6f81d6bbe5f",
+      "server": "130.94.2.227",
+      "server_port": 443,
+      "uuid": "3a1c6827-72a1-4d1c-9413-44109ff815f4",
       "tls": {
         "enabled": true,
-        "server_name": "web.hosttcp.fun",
-        "insecure": false,
+        "server_name": "navi.bankrate.com",
         "utls": {
           "enabled": true,
-          "fingerprint": "firefox"
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc",
+          "short_id": "2da72ce6"
         }
-      },
-      "transport": {
-        "type": "ws",
-        "path": "/api/v4/media/session"
       }
     },
     {
