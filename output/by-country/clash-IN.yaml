@@ -17,6 +17,15 @@ proxies:
   servername: www.cloudflare.com
   client-fingerprint: chrome
 - name: 🇮🇳 印度 (India) 02 - xiaohe
+  server: 13.140.56.100
+  port: 14430
+  udp: true
+  type: vless
+  uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
+  network: ws
+  ws-opts:
+    path: /vless
+- name: 🇮🇳 印度 (India) 03 - xiaohe
   server: xray-ikmqcro3-rapid-river-6.cloady.io
   port: 443
   udp: true
@@ -30,15 +39,6 @@ proxies:
     path: /c54a815e676d9acc
     headers:
       Host: xray-ikmqcro3-rapid-river-6.cloady.io
-- name: 🇮🇳 印度 (India) 03 - xiaohe
-  server: 13.140.56.100
-  port: 14430
-  udp: true
-  type: vless
-  uuid: 68512eac-cd53-4de3-8d1e-08f6e04af1a9
-  network: ws
-  ws-opts:
-    path: /vless
 proxy-groups:
 - name: PROXIES
   type: select
