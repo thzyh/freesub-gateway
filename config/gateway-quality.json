@@ -897,6 +897,19 @@
         "ai": 1
       },
       "checked_at": "2026-11-24T16:45:38.736364+00:00"
+    },
+    "130.94.30.242": {
+      "source": "ping0",
+      "risk_score": 20,
+      "native_ip": false,
+      "native_label": "广播 IP",
+      "scenario_stars": {
+        "tiktok": 1,
+        "cross_border_ecommerce": 1,
+        "social_media": 1,
+        "ai": 3
+      },
+      "checked_at": "2026-11-27T15:50:46.212584+00:00"
     }
   }
 }
