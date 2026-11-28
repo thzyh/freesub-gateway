@@ -910,6 +910,19 @@
         "ai": 3
       },
       "checked_at": "2026-11-27T15:50:46.212584+00:00"
+    },
+    "130.94.95.126": {
+      "source": "ping0",
+      "risk_score": 20,
+      "native_ip": false,
+      "native_label": "广播 IP",
+      "scenario_stars": {
+        "tiktok": 1,
+        "cross_border_ecommerce": 1,
+        "social_media": 1,
+        "ai": 3
+      },
+      "checked_at": "2026-11-28T14:46:37.143142+00:00"
     }
   }
 }

@@ -13,8 +13,8 @@
     },
     {
       "type": "vless",
-      "tag": "🇰🇷 韩国 (South Korea) 02 (移动家宽) - xiaohe",
-      "server": "130.94.30.242",
+      "tag": "🇮🇩 印尼 (Indonesia) 02 (移动家宽) - xiaohe",
+      "server": "130.94.95.126",
       "server_port": 443,
       "uuid": "ed94398f-893f-40c6-b14c-bf02b5f6be16",
       "tls": {
@@ -32,12 +32,59 @@
       }
     },
     {
+      "type": "vless",
+      "tag": "🇹🇭 泰国 (Thailand) 03 (移动家宽) - xiaohe",
+      "server": "130.94.25.12",
+      "server_port": 443,
+      "uuid": "ed94398f-893f-40c6-b14c-bf02b5f6be16",
+      "tls": {
+        "enabled": true,
+        "server_name": "navi.bankrate.com",
+        "utls": {
+          "enabled": true,
+          "fingerprint": "chrome"
+        },
+        "reality": {
+          "enabled": true,
+          "public_key": "UT9tFQOdy54SeW_tg-XQN3QkGYoWUpO_88XFXijkrXc",
+          "short_id": "2da72ce6"
+        }
+      }
+    },
+    {
+      "type": "anytls",
+      "tag": "🇹🇼 中国台湾 (Taiwan) 04 (家宽) - xiaohe",
+      "server": "a54ge.df6h451rh.xin",
+      "server_port": 443,
+      "password": "0324fbc29561",
+      "tls": {
+        "enabled": true,
+        "server_name": "docs.microsoft.com",
+        "insecure": true
+      }
+    },
+    {
+      "type": "anytls",
+      "tag": "🇹🇼 中国台湾 (Taiwan) 05 (家宽) - xiaohe",
+      "server": "rtifgjdr.df6h451rh.xin",
+      "server_port": 443,
+      "password": "2902c46c8493",
+      "tls": {
+        "enabled": true,
+        "server_name": "docs.microsoft.com",
+        "insecure": true
+      }
+    },
+    {
       "type": "selector",
       "tag": "select",
       "outbounds": [
         "auto",
         "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe",
-        "🇰🇷 韩国 (South Korea) 02 (移动家宽) - xiaohe"
+        "🇮🇩 印尼 (Indonesia) 02 (移动家宽) - xiaohe",
+        "🇹🇭 泰国 (Thailand) 03 (移动家宽) - xiaohe",
+        "🇹🇼 中国台湾 (Taiwan) 04 (家宽) - xiaohe",
+        "🇹🇼 中国台湾 (Taiwan) 05 (家宽) - xiaohe"
       ]
     },
     {
@@ -45,7 +92,10 @@
       "tag": "auto",
       "outbounds": [
         "🇰🇷 韩国 (South Korea) 01 (家宽) - xiaohe",
-        "🇰🇷 韩国 (South Korea) 02 (移动家宽) - xiaohe"
+        "🇮🇩 印尼 (Indonesia) 02 (移动家宽) - xiaohe",
+        "🇹🇭 泰国 (Thailand) 03 (移动家宽) - xiaohe",
+        "🇹🇼 中国台湾 (Taiwan) 04 (家宽) - xiaohe",
+        "🇹🇼 中国台湾 (Taiwan) 05 (家宽) - xiaohe"
       ],
       "url": "https://www.gstatic.com/generate_204"
     },
